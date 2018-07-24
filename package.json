@@ -1,0 +1,22 @@
+{
+  "name": "fe-code-challenge",
+  "version": "1.0.0",
+  "description": "SpotHero's Front End coding challenge.",
+  "main": "index.js",
+  "scripts": {
+    "db": "json-server --watch back-end/db.json --port 8000 --routes back-end/routes.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spothero/fe-code-challenge.git"
+  },
+  "author": "SpotHero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spothero/fe-code-challenge/issues"
+  },
+  "homepage": "https://github.com/spothero/fe-code-challenge#readme",
+  "devDependencies": {
+    "json-server": "0.14.0"
+  }
+}
