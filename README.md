@@ -1,15 +1,21 @@
 # SpotHero FE Coding Challenge
-Create a dynamic web page/app that given a JSON file of parking spots can display a user interface which offers a header, a scrollable list and a detail modal.
+Develop a single page application (SPA) that runs through a fictitious SpotHero checkout flow.
+
+## Requirements
+* Stay as close to the following designs as possible:
+    * [Search](./screens/search.jpg)
+    * [Spot Details modal](./screens/search-modal.jpg)
+    * [Checkout](./screens/checkout.jpg)
+    * [Checkout validation](./screens/checkout-errors.jpg)
+    * [Confirmation](./screens/confirmation.jpg)
+* Use the API defined below to load spot data and purchase a spot.
+* The SPA should have logical routing in place.
+* Modals should animate in and out gracefully, not just appear/disappear.
+* Email and phone number are *required* and should **have some form of validation applied** with applicable error messaging.
+* Where applicable, any data should come from either the API or from user input.
 
 ## Prerequisites
 * node/npm
-
-## Requirements
-* Stay as close to the following designs as possible ([spot-list.png](http://res.cloudinary.com/spothero/image/upload/v1523561073/spot-list_tflnfe.png) and [spot-list-with-open-detail-modal.png](http://res.cloudinary.com/spothero/image/upload/v1523561073/spot-list-with-open-detail-modal_udrrze.png)). We get it, we're giving you flat design assets so don't sweat exact colors and font-sizes.
-    * The modal should be fixed width and height and scrollable.
-    * List items should have a darker gray hover state.
-* The application should consume the `Sample Parking Spot Data` (below) from an external file and dynamically generate and template the parking spot results.
-* Clicking “Details” should open a modal which displays the related spot “title" and “description”.
 
 ## Directions
 You may use any open source tools you wish to satisfy the requirements.
@@ -25,13 +31,24 @@ You may use any open source tools you wish to satisfy the requirements.
 The API lives at `http://localhost:8000/api`.
 
 Available routes include:
-* `/spots` - Get a list of available spots.
-* `/spots/:id` - Get a spot by `id`.
+* `GET /spots` - Get a list of available spots.
+* `GET /spots/:id` - Get a spot by `id`.
+* `POST /reservations` - Purchase a spot.
+    ```
+    {
+        spotId: int,
+        firstName: string (optional),
+        lastName: string (optional),
+        email: string,
+        phone: string
+    }
+    ```
 
 ## Notes
 * This is your opportunity to show off your preferred project structure, framework and/or tooling.
-* Would anything here make sense to unit test?
+* Would anything here make sense to unit/integration test?
 * Use [Open Sans](https://fonts.google.com/specimen/Open+Sans) from Google Fonts.
+* Remember, the devil is in the details :)
 
 ## Setup
 *Your setup notes go here, if applicable.*
