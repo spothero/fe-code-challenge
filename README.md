@@ -50,5 +50,5 @@ Available routes include:
 * Use [Open Sans](https://fonts.google.com/specimen/Open+Sans) from Google Fonts.
 * Remember, the devil is in the details :)
 
-## Setup
+## Solution Setup
 *Your setup notes go here, if applicable.*
