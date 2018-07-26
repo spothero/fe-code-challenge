@@ -1,7 +1,7 @@
 {
 	"spots": [
-        {
-            "id": 1,
+        	{
+            		"id": 1,
 			"title": "Seven Lions - Valet",
 			"price": 1400,
 			"description": "Arrive at this location at 97 E Adams St. This is the Seven Lions valet stand operated by VPA. It is located in front of Starbucks on the south side of E Adams St. between S Michigan Ave. and S Wabash Ave. If you are using the SpotHero Mobile App, please refer to the 2nd picture for an annotated map.",
@@ -10,7 +10,7 @@
 		},
 		{
 			"id": 2,
-            "title": "55 E Monroe St. - Garage",
+            		"title": "55 E Monroe St. - Garage",
 			"price": 1650,
 			"description": "Enter this location at 55 E Monroe St. This is the Park Monroe garage, operated by SP+. It is located on the south/right-hand side of E Monroe St. (a one-way street) between S Wabash Ave. and S Michigan Ave. You may also enter this location at its other entrance, 50 E Adams, between S Michigan Ave and S Wabash Ave.",
 			"distance": "390 ft",
