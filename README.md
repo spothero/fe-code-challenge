@@ -2,6 +2,7 @@
 Develop a single page application (SPA) that runs through a fictitious SpotHero checkout flow.
 
 ## Requirements
+* While there is not a requirement on the tech stack to use, we utilize React in our projects. As such, the preferred stack we'd love to see is a React based approach. You will not be penalized for using a different stack, however.
 * Stay as close to the following designs as possible:
     * [Search](./screens/search.jpg)
     * [Spot Details modal](./screens/search-modal.jpg)
