@@ -1,0 +1,177 @@
+@keyframes Button-loading-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.Button {
+    @extend %control-size;
+    @include font-family();
+    padding: 10px 30px;
+    text-align: center;
+    font-weight: $font-weight-semi-bold;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    user-select: none;
+    appearance: none;
+    background: none;
+    border: none;
+    margin: 0;
+    position: relative;
+    outline: none;
+    transition: background-color $animation, color $animation, border $animation;
+
+    &:focus,
+    &:active {
+        outline: none;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+
+    &::before {
+        opacity: 0;
+        transition: opacity 0.25s;
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 0;
+        transition-property: width;
+        line-height: 1;
+    }
+
+    .Icon {
+        position: relative;
+        margin: -3px 0 0;
+        width: 12px;
+        height: 12px;
+    }
+}
+
+.Button-block {
+    display: block;
+    width: 100%;
+}
+
+.Button-with-icon-left {
+    .Icon {
+        margin-right: 5px;
+    }
+}
+
+.Button-with-icon-right {
+    .Icon {
+        margin-left: 5px;
+    }
+}
+
+.Button-primary {
+    background-color: $color-shift;
+    color: $color-white;
+    border: 1px solid $color-shift;
+
+    &:not([disabled]) {
+        &:hover {
+            background-color: $color-shift-hover;
+            border-color: $color-shift-hover;
+        }
+    }
+
+    &:disabled {
+        background-color: $color-dashboard;
+        color: $color-white;
+        border: 1px solid $color-dashboard;
+    }
+}
+
+.Button-secondary {
+    background-color: $color-white;
+    color: $color-shift;
+    border: 1px solid $color-dashboard;
+
+    &:not([disabled]) {
+        &:hover {
+            border-color: $color-shift;
+        }
+    }
+
+    &:disabled {
+        background-color: $color-pavement;
+        color: $color-cement;
+        border: 1px solid $color-dashboard;
+    }
+}
+
+.Button-tertiary {
+    background-color: $color-white;
+    color: $color-cement;
+    border: 1px solid $color-dashboard;
+
+    &:not([disabled]) {
+        &:hover {
+            border-color: $color-shift;
+        }
+    }
+
+    &:disabled {
+        background-color: $color-pavement;
+        color: $color-cement;
+        border: 1px solid $color-dashboard;
+    }
+}
+
+.Button-loading {
+    position: relative;
+    pointer-events: none;
+    cursor: not-allowed;
+
+    &::before {
+        content: "";
+        position: absolute;
+        right: 0.5em;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 0.5em;
+        height: 0.5em;
+        border: 2px solid;
+        border-left-color: transparent;
+        border-radius: 50%;
+        opacity: 1;
+        animation-duration: 0.5s;
+        animation-iteration-count: infinite;
+        animation-name: Button-loading-rotate;
+        animation-timing-function: linear;
+    }
+
+    &:not([disabled]) {
+        background-color: $color-pavement;
+        color: $color-cement;
+        border: 1px solid $color-dashboard;
+        opacity: 0.8;
+    }
+
+    &.Button {
+        &::before {
+            border: 2px solid;
+            border-left-color: transparent;
+            right: 1.5em;
+            width: 1em;
+            height: 1em;
+            opacity: 1;
+        }
+
+        &::after {
+            transition-delay: 0;
+            width: 1em;
+        }
+    }
+}

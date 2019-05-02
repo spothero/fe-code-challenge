@@ -1,31 +1,35 @@
 # SpotHero FE Coding Challenge
-Develop a single page application (SPA) that runs through a fictitious SpotHero checkout flow.
-
-## Requirements
-* While there is not a requirement on the tech stack to use, we utilize React in our projects. As such, the preferred stack we'd love to see is a React based approach. You will not be penalized for using a different stack, however.
-* Stay as close to the following designs as possible:
-    * [Search](./screens/search.jpg)
-    * [Spot Details modal](./screens/search-modal.jpg)
-    * [Checkout](./screens/checkout.jpg)
-    * [Checkout validation](./screens/checkout-errors.jpg)
-    * [Confirmation](./screens/confirmation.jpg)
-* Use the API defined below to load spot data and purchase a spot.
-* The SPA should have logical routing in place.
-* Modals should animate in and out gracefully, not just appear/disappear.
-* Email and phone number are *required* and should **have some form of validation applied** with applicable error messaging.
-* Where applicable, any data should come from either the API or from user input.
+Complete the two stories below to finalize a fictitious SpotHero checkout flow.
 
 ## Prerequisites
 * node/npm
 
+## Story #1
+### Background
+Users want to see details about a spot before purchasing it.
+
+### Requirements
+Implement a modal that shows the spot details. Follow [the design](./screens/search-modal.jpg) provided by the product team.
+* The modal should animate in and out gracefully, not just appear/disappear.
+
+## Story #2
+### Background
+Users should be able to purchase a spot.
+
+### Requirements
+Add a form that takes user input, verifies it, and allows the user to hit the confirmation page. Follow [the design](./screens/checkout.jpg) provided by the product team.
+* Email and Phone Number fields are required and should [display errors](./screens/checkout-errors.jpg) if not filled out correctly.
+* Phone Number should only allow entry of digits. Bonus points for auto-formating to a US phone number (such as *(xxx) xxx-xxxx*).
+* Adjust the confirmation page (if necessary) to ensure it works and renders correctly.
+* Make sure that a second run through the flow and booking another spot updates all UI correctly.
+
 ## Directions
-You may use any open source tools you wish to satisfy the requirements.
+You may use any additional open source tools you wish to satisfy the requirements.
 
 1. Fork this repository to your own GitHub account.
 1. Run `npm install` to download all necessary dependencies.
-1. Run `npm run db` to serve the API *(see API notes below)*.
+1. Run `npm start` to serve the API *(see API notes below)* and spin up the local development environment.
 1. Implement your solution.
-1. Document any necessary instructions in the *Setup* section below.
 1. Download your fork as a zip file and upload it to the relevant location within [Greenhouse](http://greenhouse.io).
 
 ## API
@@ -46,10 +50,5 @@ Available routes include:
     ```
 
 ## Notes
-* This is your opportunity to show off your preferred project structure, framework and/or tooling.
 * Would anything here make sense to unit/integration test?
-* Use [Open Sans](https://fonts.google.com/specimen/Open+Sans) from Google Fonts.
 * Remember, the devil is in the details :)
-
-## Solution Setup
-*Your setup notes go here, if applicable.*

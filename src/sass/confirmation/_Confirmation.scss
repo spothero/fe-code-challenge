@@ -1,0 +1,30 @@
+.Confirmation {
+    width: 30%;
+    margin: 40px auto;
+    padding: 25px;
+    border: 1px solid $color-dashboard;
+    border-radius: 8px;
+    background-color: $color-white;
+    text-align: center;
+
+    h1 {
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    p {
+        padding: 0 40px;
+    }
+
+    .Image {
+        display: block;
+        margin: 30px auto;
+        border: 1px solid $color-dashboard;
+        border-radius: 4px;
+    }
+
+    .Button {
+        display: block;
+        margin: 30px auto 0;
+    }
+}
