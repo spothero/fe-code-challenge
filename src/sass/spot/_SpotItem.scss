@@ -1,0 +1,45 @@
+.SpotItem {
+    display: flex;
+    padding: 20px 25px;
+    border-bottom: 1px solid darken($color-pavement, 5%);
+
+    .Image {
+        width: 145px;
+        height: 98px;
+        border: 1px solid $color-dashboard;
+        border-radius: 4px;
+    }
+}
+
+.SpotItem-selected {
+    position: relative;
+    background-color: darken($color-pavement, 1%);
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 6px;
+        height: 100%;
+        background-color: $color-go;
+    }
+}
+
+.SpotItem-info {
+    margin-left: 25px;
+
+    h2 {
+        @include font-size(1.8);
+        margin-bottom: 1em;
+    }
+
+    p {
+        margin: 0;
+        line-height: 1;
+    }
+
+    .TextButton {
+        margin-top: 1em;
+    }
+}

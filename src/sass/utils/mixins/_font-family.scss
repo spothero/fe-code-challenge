@@ -1,0 +1,7 @@
+@mixin font-family($family: "Open Sans") {
+    @if $family == "Open Sans" {
+        font-family: "Open Sans", sans-serif;
+    } @else if $family == "Helvetica" {
+        font-family: Helvetica, Arial, sans-serif;
+    }
+}

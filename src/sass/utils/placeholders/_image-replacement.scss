@@ -1,0 +1,12 @@
+%ir {
+    background-color: transparent;
+    border: none;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 150%;
+    }
+}

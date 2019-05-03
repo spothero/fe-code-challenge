@@ -1,0 +1,113 @@
+@keyframes TextButton-loading-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.TextButton {
+    @include font-family();
+    display: inline-block;
+    cursor: pointer;
+    white-space: nowrap;
+    appearance: none;
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    position: relative;
+    outline: none;
+    font-weight: $font-weight-semi-bold;
+    color: $color-shift;
+    transition: color $animation;
+
+    &:focus,
+    &:active {
+        outline: none;
+    }
+
+    &:not([disabled]) {
+        &:hover {
+            color: $color-shift-hover;
+        }
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        color: $color-dashboard;
+    }
+
+    .Icon {
+        position: relative;
+        margin: -3px 0 0;
+        width: 10px;
+        height: 10px;
+    }
+}
+
+.TextButton-block {
+    display: block;
+    width: 100%;
+}
+
+.TextButton-with-icon-left {
+    .Icon {
+        margin-right: 5px;
+    }
+}
+
+.TextButton-with-icon-right {
+    .Icon {
+        margin-left: 5px;
+    }
+}
+
+.TextButton-loading {
+    position: relative;
+    pointer-events: none;
+    cursor: not-allowed;
+
+    &::before {
+        content: "";
+        position: absolute;
+        right: 0.5em;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 0.5em;
+        height: 0.5em;
+        border: 2px solid;
+        border-left-color: transparent;
+        border-radius: 50%;
+        opacity: 1;
+        animation-duration: 0.5s;
+        animation-iteration-count: infinite;
+        animation-name: TextButton-loading-rotate;
+        animation-timing-function: linear;
+    }
+
+    &:not([disabled]) {
+        color: $color-cement;
+        opacity: 0.8;
+    }
+
+    &.TextButton {
+        &::before {
+            border: 2px solid;
+            border-left-color: transparent;
+            right: -1.5em;
+            width: 1em;
+            height: 1em;
+            opacity: 1;
+        }
+
+        &::after {
+            transition-delay: 0;
+            width: 1em;
+        }
+    }
+}
