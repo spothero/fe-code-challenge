@@ -20,7 +20,7 @@ class Confirmation extends PureComponent {
             pushTo
         } = props;
 
-        // if you refresh on conirmation and there isn't a selectedSpot, make sure to go back to search and render nothing here
+        // if you refresh on confirmation and there isn't a selectedSpot, make sure to go back to search and render nothing here
         if (!selectedSpot) {
             pushTo('/');
         }
