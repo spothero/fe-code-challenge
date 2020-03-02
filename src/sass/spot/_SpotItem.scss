@@ -4,6 +4,7 @@
     border-bottom: 1px solid darken($color-pavement, 5%);
 
     .Image {
+        flex-shrink: 0;
         width: 145px;
         height: 98px;
         border: 1px solid $color-dashboard;
