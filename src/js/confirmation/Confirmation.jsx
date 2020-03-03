@@ -2,8 +2,8 @@ import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {push} from 'connected-react-router';
-import Button from 'common/Button';
-import Image from 'common/Image';
+import Button from '../common/Button';
+import Image from '../common/Image';
 
 class Confirmation extends PureComponent {
     static propTypes = {

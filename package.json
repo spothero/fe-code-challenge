@@ -1,45 +1,67 @@
 {
   "name": "fe-code-challenge",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "SpotHero's Front End coding challenge.",
   "author": "SpotHero",
   "license": "Apache-2.0",
+  "private": true,
   "bugs": {
     "url": "https://github.com/spothero/fe-code-challenge/issues"
   },
-  "homepage": "https://github.com/spothero/fe-code-challenge#readme",
-  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/spothero/fe-code-challenge.git"
   },
   "scripts": {
-    "db": "json-server --watch back-end/db.json --port 8000 --routes back-end/routes.json",
-    "start": "concurrently \"npm run db\" \"ACE_NPM_EVENT=start ace\"",
-    "test": "ACE_NPM_EVENT=test ace -- test & wait-on http://localhost:3000 && npm run cypress:open",
-    "cypress:open": "ace -- generateWebpackSettings && cypress open",
-    "cypress:run": "ace -- generateWebpackSettings && cypress run"
+    "db": "json-server --watch back-end/db.json --port 8001 --routes back-end/routes.json",
+    "start": "concurrently \"npm run db\" \"react-app-rewired start\"",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "@spothero/ace": "8.0.2",
+    "@spothero/eslint-config": "1.9.0",
+    "@spothero/stylelint-config": "1.4.0",
     "concurrently": "4.1.0",
-    "json-server": "0.14.2"
+    "json-server": "0.14.2",
+    "stylelint": "13.2.0",
+    "stylelint-webpack-plugin": "1.2.3"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "4.2.4",
+    "@testing-library/react": "9.4.1",
+    "@testing-library/user-event": "7.2.1",
     "axios": "0.18.0",
     "classnames": "2.2.6",
     "connected-react-router": "6.4.0",
     "core-js": "3.0.1",
+    "form-serialize": "0.7.2",
     "history": "4.9.0",
+    "node-sass": "4.13.1",
     "prop-types": "15.7.2",
-    "react": "16.8.6",
-    "react-dom": "16.8.6",
+    "react": "16.13.0",
+    "react-app-rewired": "2.1.5",
+    "react-dom": "16.13.0",
     "react-hot-loader": "4.8.4",
     "react-redux": "7.0.3",
     "react-router-dom": "5.0.0",
+    "react-scripts": "3.4.0",
     "redux": "4.0.1",
     "redux-promise-middleware": "6.1.0",
     "redux-thunk": "2.3.0",
-    "regenerator-runtime": "0.13.2"
+    "regenerator-runtime": "0.13.2",
+    "transitionEnd": "1.0.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
