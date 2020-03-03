@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Provider} from 'react-redux';
 import {ConnectedRouter} from 'connected-react-router';
 import axios from 'axios';
-import createStore, {getHistory} from 'store/store';
+import createStore, {getHistory} from './store/store';
 import App from './App';
 
 export default class Root extends Component {

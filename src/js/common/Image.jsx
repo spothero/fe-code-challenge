@@ -15,6 +15,7 @@ const Image = ({
     return (
         <img
             className={classes}
+            alt=""
             {...imgAttributes}
             onLoad={onLoad}
         />

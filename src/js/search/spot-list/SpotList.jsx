@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
-import TextButton from 'common/TextButton';
-import SpotItem from 'spot/SpotItem';
+import TextButton from '../../common/TextButton';
+import SpotItem from '../../spot/SpotItem';
 
 export default class SpotList extends PureComponent {
     static propTypes = {

@@ -33,7 +33,7 @@ You may use any additional open source tools you wish to satisfy the requirement
 1. Download your fork as a zip file and upload it to the relevant location within [Greenhouse](http://greenhouse.io).
 
 ## API
-The API lives at `http://localhost:8000/api`.
+The API lives at `http://localhost:8001/api`.
 
 Available routes include:
 * `GET /spots` - Get a list of available spots.

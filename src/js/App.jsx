@@ -6,9 +6,10 @@ import {
     Route,
     Switch
 } from 'react-router-dom';
-import Checkout from 'checkout/Checkout';
-import Confirmation from 'confirmation/Confirmation';
-import Search from 'search/Search';
+import Checkout from './checkout/Checkout';
+import Confirmation from './confirmation/Confirmation';
+import Search from './search/Search';
+import '../sass/main.scss';
 
 const App = ({
     spots

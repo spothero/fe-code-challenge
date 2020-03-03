@@ -9,6 +9,7 @@
 node_modules
 _internal
 dist
+build
 checkstyle-*.xml
 cypress/generated-webpack-settings.json
 cypress/screenshots
