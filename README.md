@@ -26,11 +26,11 @@ Add a form that takes user input, verifies it, and allows the user to hit the co
 ## Directions
 You may use any additional open source tools you wish to satisfy the requirements.
 
-1. Fork this repository to your own GitHub account.
+1. Download or clone this repository.
 1. Run `npm install` to download all necessary dependencies.
 1. Run `npm start` to serve the API *(see API notes below)* and spin up the local development environment.
 1. Implement your solution.
-1. Download your fork as a zip file and upload it to the relevant location within [Greenhouse](http://greenhouse.io).
+1. Package up your project as a zip file and upload it to the relevant location within [Greenhouse](http://greenhouse.io).
 
 ## API
 The API lives at `http://localhost:8001/api`.
