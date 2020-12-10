@@ -1,4 +1,5 @@
 import React from "react";
+import userEvent from "@testing-library/user-event";
 import { build, fake, perBuild } from "@jackfranklin/test-data-bot";
 import { screen, render as rtlRender } from "@testing-library/react";
 
@@ -52,5 +53,16 @@ describe("<SpotItem />", () => {
         expect(screen.getByText(spotItem.data.distance)).toBeInTheDocument();
     });
 
-    // TODO: should we add a test for clicking the details button?
+    it("calls the detail click handler when clicked", () => {
+        const onDetailsClick = jest.fn((data) => data);
+        const spotItem = buildSpotItem();
+
+        render({ ...spotItem, onDetailsClick });
+
+        expect(onDetailsClick).toHaveBeenCalledTimes(0);
+
+        userEvent.click(screen.getByText("Details"));
+
+        expect(onDetailsClick).toHaveBeenCalledWith(spotItem.data);
+    });
 });

@@ -29,7 +29,7 @@ describe("<Button />", () => {
         expect(onClick).toHaveBeenCalledTimes(1);
     });
 
-    it("is disableable", () => {
+    it("can be disabled", () => {
         const onClick = jest.fn();
 
         render({ buttonText, onClick, disabled: true });
