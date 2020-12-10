@@ -1,6 +1,5 @@
 import React from "react";
-import userEvent from "@testing-library/user-event";
-import { build, fake } from "@jackfranklin/test-data-bot";
+import { build, fake, perBuild } from "@jackfranklin/test-data-bot";
 import { screen, render as rtlRender } from "@testing-library/react";
 
 import SpotItem from "./SpotItem";
@@ -29,9 +28,11 @@ describe("<SpotItem />", () => {
         expect(screen.getByRole("heading")).toBeEmptyDOMElement();
     });
     it("hides the details button", () => {
-        render(buildSpotItem({ overrides: { showDetails: false } }));
+        render(
+            buildSpotItem({ overrides: { showDetails: perBuild(() => false) } })
+        );
 
-        expect(screen.queryByText("Details")).toBeNull;
+        expect(screen.queryByText("Details")).toBeNull();
     });
 
     it("renders as expected with data", () => {
