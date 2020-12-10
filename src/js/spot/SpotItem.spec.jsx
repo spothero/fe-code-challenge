@@ -3,6 +3,8 @@ import userEvent from "@testing-library/user-event";
 import { build, fake } from "@jackfranklin/test-data-bot";
 import { screen, render as rtlRender } from "@testing-library/react";
 
+import SpotItem from "./SpotItem";
+
 const buildSpotItem = build("SpotItem", {
     fields: {
         showDetails: true,
@@ -14,8 +16,6 @@ const buildSpotItem = build("SpotItem", {
         },
     },
 });
-
-import SpotItem from "./SpotItem";
 
 const render = ({ data = {}, ...props } = {}) =>
     rtlRender(<SpotItem data={data} {...props} />);
