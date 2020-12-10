@@ -38,17 +38,21 @@ The API lives at `http://localhost:8001/api`.
 Available routes include:
 * `GET /spots` - Get a list of available spots.
 * `GET /spots/:id` - Get a spot by `id`.
+* `GET /reservations/:id` - Get a reservation by `id`
 * `POST /reservations` - Purchase a spot.
     ```
     {
         spotId: int,
-        firstName: string (optional),
-        lastName: string (optional),
         email: string,
-        phone: string
+        phone: string,
+        lastName: string,
+        firstName: string,
     }
     ```
 
 ## Notes
-* Would anything here make sense to unit/integration test?
-* Remember, the devil is in the details :)
+* Make sure to include all necessary fields for the API request in [story #2](#story-2)
+* If you are unfamiliar with [json-server](https://www.npmjs.com/package/json-server#filter), it may be worth the time to familiarize yourself with it
+* Would anything here make sense to test?
+* This repository may have old packages, feel free to upgrade the packages and leave an explanation here in the README explaining your thought process.
+* Remember, the devil is in the details
