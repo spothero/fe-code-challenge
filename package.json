@@ -14,12 +14,13 @@
   },
   "scripts": {
     "db": "json-server --watch back-end/db.json --port 8001 --routes back-end/routes.json",
-    "start": "concurrently \"npm run db\" \"react-app-rewired start\"",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
+    "start": "concurrently \"npm run db\" \"craco start\"",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "@craco/craco": "6.1.0",
     "@jackfranklin/test-data-bot": "1.3.0",
     "@spothero/eslint-config": "1.9.0",
     "@spothero/stylelint-config": "1.4.0",
@@ -29,9 +30,11 @@
     "stylelint-webpack-plugin": "1.2.3"
   },
   "dependencies": {
-    "@testing-library/jest-dom": "5.11.6",
-    "@testing-library/react": "11.2.2",
-    "@testing-library/user-event": "12.5.0",
+    "@tailwindcss/postcss7-compat": "2.0.2",
+    "@testing-library/jest-dom": "5.11.4",
+    "@testing-library/react": "11.1.0",
+    "@testing-library/user-event": "12.1.10",
+    "autoprefixer": "9.8.6",
     "axios": "0.21.0",
     "classnames": "2.2.6",
     "connected-react-router": "6.4.0",
@@ -39,21 +42,90 @@
     "form-serialize": "0.7.2",
     "history": "4.9.0",
     "node-sass": "4.13.1",
+    "postcss": "7.0.35",
     "prop-types": "15.7.2",
     "react": "17.0.1",
-    "react-app-rewired": "2.1.7",
+    "react-app-rewired": "2.1.8",
     "react-dom": "17.0.1",
-    "react-hot-loader": "4.8.4",
+    "react-hot-loader": "4.13.0",
     "react-redux": "7.2.2",
     "react-router-dom": "5.0.0",
-    "react-scripts": "3.4.0",
+    "react-scripts": "4.0.1",
     "redux": "4.0.5",
     "redux-promise-middleware": "6.1.2",
     "redux-thunk": "2.3.0",
     "regenerator-runtime": "0.13.7",
-    "transitionEnd": "1.0.2"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@2.0.2",
+    "transitionEnd": "1.0.2",
+    "web-vitals": "1.1.0"
   },
-  "browserslist": [
-    "defaults"
-  ]
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "stylelint": {
+    "extends": [
+      "@spothero/stylelint-config",
+      "stylelint-prettier/recommended"
+    ],
+    "ignoreFiles": [
+      "src/sass/mobile.desktop.module.scss",
+      "src/sass/vendor/_react-big-calendar.scss"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "@spothero",
+      "plugin:prettier/recommended",
+      "prettier/babel",
+      "prettier/react"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.js"
+        ],
+        "rules": {
+          "func-names": 0
+        }
+      },
+      {
+        "files": [
+          "**/*.{js,jsx}"
+        ],
+        "rules": {
+          "no-console": "off"
+        }
+      }
+    ]
+  },
+  "prettier": {
+    "bracketSpacing": false,
+    "endOfLine": "lf",
+    "singleQuote": true,
+    "tabWidth": 4,
+    "trailingComma": "es5",
+    "overrides": [
+      {
+        "files": "*.json",
+        "options": {
+          "tabWidth": 2
+        }
+      },
+      {
+        "files": "*.scss",
+        "options": {
+          "singleQuote": false
+        }
+      }
+    ]
+  }
 }
