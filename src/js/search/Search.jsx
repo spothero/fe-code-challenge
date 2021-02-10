@@ -4,20 +4,22 @@ import {connect} from 'react-redux';
 import {updateSelected} from '../spot/spot-actions';
 import SpotList from './spot-list/SpotList';
 
+const styles = 'absolute top-0 right-0 bottom-0 w-window-spotList';
+
 const Search = ({
-    selectedSpot,
     spots,
-    setSpot
+    setSpot,
+    selectedSpot,
 }) => {
     return (
-        <div className="Search">
+        <>
             <SpotList
                 spots={spots}
-                selectedSpot={selectedSpot}
                 setSpot={setSpot}
+                selectedSpot={selectedSpot}
             />
-            <div className="Search-content" />
-        </div>
+            <div className={styles} />
+        </>
     );
 };
 

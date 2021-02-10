@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import PropTypes from 'prop-types';
 
 import Image from '../common/Image';
@@ -9,7 +9,9 @@ const styles = {
     border: isSelected => `absolute top-0 left-0 bottom-0 w-2 z-10 ${isSelected ? 'bg-brand-green' : 'bg-transparent'}`
 };
 
-const SpotItem = ({data, isSelected, onDetailsClick, showDetails = true}) => {
+const SpotItem = ({data, selectedSpotId, onDetailsClick, showDetails = true}) => {
+    const isSelected = useMemo(() => data.id === selectedSpotId, [data.id, selectedSpotId]);
+
     const {
         title,
         image,
@@ -39,9 +41,9 @@ const SpotItem = ({data, isSelected, onDetailsClick, showDetails = true}) => {
 };
 
 SpotItem.propTypes = {
-    isSelected: PropTypes.bool,
     showDetails: PropTypes.bool,
     onDetailsClick: PropTypes.func,
+    selectedSpotId: PropTypes.number,
     data: PropTypes.object.isRequired,
 };
 
