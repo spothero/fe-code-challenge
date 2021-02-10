@@ -5,11 +5,18 @@ import {push} from 'connected-react-router';
 import Button from '../common/Button';
 import Image from '../common/Image';
 
+const styles = {
+    confirmation: 'w-4/12 mx-auto my-16 Confirmation p-10 bg-neutrals-white rounded border border-neutrals-dashboard text-center',
+    heading: 'text-center uppercase',
+    image: 'block my-12 mx-auto rounded border border-solid border-neutrals-dashboard',
+    button: 'mt-12'
+};
+
 class Confirmation extends PureComponent {
     static propTypes = {
-        email: PropTypes.string.isRequired,
         selectedSpot: PropTypes.object,
-        pushTo: PropTypes.func.isRequired
+        pushTo: PropTypes.func.isRequired,
+        email: PropTypes.string.isRequired,
     };
 
     constructor(props) {
@@ -45,13 +52,18 @@ class Confirmation extends PureComponent {
         }
 
         return (
-            <div className="Confirmation">
-                <h1>Park it like its hot!</h1>
-                <p>You successfully purchased parking at <strong>{selectedSpot.title}</strong> for <strong>${(selectedSpot.price / 100).toFixed(2)}</strong>.</p>
-                <Image src={selectedSpot.image} />
+            <div className={styles.confirmation}>
+                <h1 className={styles.heading}>Park it like its hot!</h1>
+                <p >You successfully purchased parking at <strong>{selectedSpot.title}</strong> for <strong>${(selectedSpot.price / 100).toFixed(2)}</strong>.</p>
+                <Image
+                    src={selectedSpot.image}
+                    className={styles.image}
+                />
                 <p>We emailed a receipt to <a href={`mailto:${email}`}>{email}</a>.</p>
+
                 <Button
                     color="primary"
+                    className={styles.button}
                     onClick={this._onPurchaseAnotherClick}
                 >
                     Purchase Another Spot!

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {hot} from 'react-hot-loader/root';
 import {Route, Switch} from 'react-router-dom';
 
-import Search from './search/Search';
+// import Search from './search/Search';
 import Checkout from './checkout/Checkout';
 import Confirmation from './confirmation/Confirmation';
 
@@ -17,9 +17,10 @@ const App = ({spots}) => {
             <Route
                 exact
                 path="/"
-                render={() => {
-                    return <Search spots={spots} />;
-                }}
+                component={Confirmation}
+                // render={() => {
+                //     return <Search spots={spots} />;
+                // }}
             />
             <Route
                 path="/checkout"
