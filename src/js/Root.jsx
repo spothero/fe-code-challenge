@@ -32,7 +32,7 @@ export default class Root extends Component {
         const {isLoading, spots} = this.state;
 
         if (isLoading) {
-            return <div className="Root-loader">Loading...</div>;
+            return <div>Loading...</div>;
         }
 
         return (

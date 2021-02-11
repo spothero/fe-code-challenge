@@ -17,9 +17,9 @@ const App = ({spots}) => {
             <Route
                 exact
                 path="/"
-                render={() => {
-                    return <Search spots={spots} />;
-                }}
+                render={() => (
+                    <Search spots={spots} />
+                )}
             />
             <Route
                 path="/checkout"

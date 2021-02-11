@@ -39,7 +39,7 @@ const Confirmation = ({
             >
                 Park it like its hot!
             </Heading>
-            <p >You successfully purchased parking at <strong>{selectedSpot.title}</strong> for <strong>${(selectedSpot.price / 100).toFixed(2)}</strong>.</p>
+            <p>You successfully purchased parking at <strong>{selectedSpot.title}</strong> for <strong>${(selectedSpot.price / 100).toFixed(2)}</strong>.</p>
             <Image
                 src={selectedSpot.image}
                 className={styles.image}
