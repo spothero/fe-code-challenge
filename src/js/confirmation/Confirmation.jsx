@@ -1,9 +1,11 @@
-import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+import React, {useEffect} from 'react';
 import {push} from 'connected-react-router';
-import Button from '../common/Button';
+
 import Image from '../common/Image';
+import Button from '../common/Button';
+import Heading from '../common/Heading';
 
 const styles = {
     confirmation: 'w-4/12 mx-auto my-16 Confirmation p-10 bg-neutrals-white rounded border border-neutrals-dashboard text-center',
@@ -31,7 +33,12 @@ const Confirmation = ({
 
     return (
         <div className={styles.confirmation}>
-            <h1 className={styles.heading}>Park it like its hot!</h1>
+            <Heading
+                level={1}
+                className={styles.heading}
+            >
+                Park it like its hot!
+            </Heading>
             <p >You successfully purchased parking at <strong>{selectedSpot.title}</strong> for <strong>${(selectedSpot.price / 100).toFixed(2)}</strong>.</p>
             <Image
                 src={selectedSpot.image}

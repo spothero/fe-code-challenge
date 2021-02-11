@@ -1,47 +1,28 @@
 .spothero-html {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        margin-top: 0;
-        font-weight: $font-weight-semi-bold;
-
-        &.heading-sm {
-            @include font-size(1.6);
-        }
-
-        &.heading-md {
-            @include font-size(1.8);
-        }
-
-        &.heading-lg {
-            @include font-size(4.8);
-        }
+    body {
+        @apply font-openSans;
+        @apply text-body;
+        @apply bg-neutrals-pavement;
+        @apply text-brand-darkBlue;
     }
 
     p {
-        line-height: 1.5;
+        @apply leading-normal;
     }
 
     a {
-        text-decoration: none;
-        outline: none;
-        color: $color-shift;
-        text-align: left;
+        @apply no-underline;
+        @apply outline-none;
+        @apply text-brand-blue;
+        @apply text-left;
 
         &:active,
         &:focus {
-            outline: none;
+            @apply outline-none;
         }
 
         &:hover {
-            color: $color-shift-hover;
+            @apply text-brand-blue-700;
         }
-    }
-
-    small {
-        @include font-size($font-size-sm);
     }
 }

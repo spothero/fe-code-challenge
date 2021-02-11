@@ -2,6 +2,7 @@ import React, {useMemo} from 'react';
 import PropTypes from 'prop-types';
 
 import Image from '../common/Image';
+import Heading from '../common/Heading';
 import TextButton from '../common/TextButton';
 
 const styles = {
@@ -28,7 +29,12 @@ const SpotItem = ({data, selectedSpotId, onDetailsClick, showDetails = true}) =>
                 className="flex-shrink-0 w-56 h-36 border border-neutral-dashboard border-solid rounded"
             />
             <div className="ml-6 grid grid-rows-3 gap-row-4 items-center justify-items-start">
-                <h2 className="text-3xl">{title}</h2>
+                <Heading
+                    level={2}
+                    className="text-3xl"
+                >
+                    {title}
+                </Heading>
                 <p className="m-0">{distance}</p>
                 {showDetails && (
                     <TextButton onClick={handleClick}>

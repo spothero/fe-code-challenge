@@ -1,27 +1,5 @@
-html {
-    &.spothero-html {
-        box-sizing: border-box;
-        font-size: 10px;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
-}
-
 .spothero-html {
-    body {
-        @include font-family();
-        @include font-size();
-        font-weight: $font-weight-normal;
-        background-color: $color-pavement;
-        color: $color-fuel;
-    }
-}
-
-.Root-loader {
-    width: 100vw;
-    height: 100vh;
-
-    .Loader {
-        @include center();
-    }
+    @apply box-border;
+    @apply text-app;
+    @apply antialiased;
 }

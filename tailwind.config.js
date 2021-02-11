@@ -1,5 +1,6 @@
 const colors = require('./tailwind/colors');
 const spacing = require('./tailwind/spacing');
+const fontSize = require('./tailwind/fontSize');
 const maxHeight = require('./tailwind/maxHeight');
 const fontFamily = require('./tailwind/fontFamily');
 
@@ -9,6 +10,7 @@ module.exports = {
     theme: {
         maxHeight,
         fontFamily,
+        fontSize,
         extend: {
             colors,
             spacing,

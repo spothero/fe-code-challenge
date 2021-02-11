@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import SpotItem from '../../spot/SpotItem';
+import Heading from '../../common/Heading';
 import TextButton from '../../common/TextButton';
 
 const styles = {
@@ -22,7 +23,7 @@ const SpotList = ({selectedSpot, spots, setSpot}) => {
                 <div className={styles.breadcrumbs}>
                     <TextButton>Chicago</TextButton> &gt; Millennium Park
                 </div>
-                <h1>Millennium Park</h1>
+                <Heading level={1}>Millennium Park</Heading>
                 <p>{spots.length} Spots Available</p>
             </div>
             <div className={styles.list}>
