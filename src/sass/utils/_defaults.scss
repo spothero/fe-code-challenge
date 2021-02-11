@@ -1,39 +1,7 @@
-$animation-transition: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-$animation: 0.2s $animation-transition;
-
-/*
-    If you modify the breakpoints below you should also update the
-    BREAKPOINTS in BrandUtils (@spothero/utils/brand/brand.js).
-*/
-$breakpoint-sm: 480px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 1025px;
-$breakpoint-xl: 1440px;
-
-/*
-    If you modify the colors below you should also update the
-    COLORS in BrandUtils (@spothero/utils/brand/brand.js).
-*/
 $color-fuel: #002d5b;
 $color-shift: #0082ff;
 $color-shift-hover: #026bcf;
-$color-accelerate: #009851;
-$color-go: #1dbd71;
-$color-caution: #fdb22b;
-$color-stop: #ed3354;
 $color-pavement: #f6f7f9;
-$color-dashboard: #cbd4de;
-$color-cement: #5c7996;
-$color-white: #ffffff;
-$color-black: #212121;
-$color-highlight: #fff000;
-$color-social-behance: #1769ff;
-$color-social-dribbble: #ea4c89;
-$color-social-facebook: #3b5998;
-$color-social-github: #cccccc;
-$color-social-linkedin: #007bb6;
-$color-social-twitter: #00aced;
-$color-social-yelp: #c41200;
 
 $font-size-sm: 1.2;
 $font-size-md: 1.4;

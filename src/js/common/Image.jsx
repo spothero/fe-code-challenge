@@ -1,26 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
 const Image = ({
-    className,
     onLoad,
+    className,
     ...imgAttributes
-}) => {
-    const classes = classNames(
-        className,
-        'Image',
-    );
-
-    return (
-        <img
-            className={classes}
-            alt=""
-            {...imgAttributes}
-            onLoad={onLoad}
-        />
-    );
-};
+}) => (
+    <img
+        className={className}
+        alt=""
+        {...imgAttributes}
+        onLoad={onLoad}
+    />
+);
 
 Image.propTypes = {
     /** Additional class(es) to add to the component. */

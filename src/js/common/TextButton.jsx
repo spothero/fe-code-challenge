@@ -2,41 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+const styles = isDisabled => [
+    'pointer appearance-none select-none transition-colors',
+    'relative inline-block whitespace-nowrap bg-none border-none m-0 p-0 outline-none',
+    'font-openSans font-semibold text-brand-blue',
+    'focus:outline-none active:outline-none',
+    isDisabled ? 'cursor-not-allowed text-neutrals-dashboard' : 'hover:text-brands-blue-700'
+];
+
 const TextButton = ({
-    className,
-    children,
     href,
-    iconPosition,
-    block,
-    disabled,
-    loading,
-    onClick,
+    className,
     ...attrs
 }) => {
-    const classes = classNames(
-        'TextButton',
-        {'TextButton-block': block},
-        {'TextButton-loading': loading},
-        {[`TextButton-with-icon-${iconPosition}`]: iconPosition},
-        className
-    );
-    const tag = (href) ? 'a' : 'button';
-    const opts = {
-        className: classes,
-        disabled,
-        onClick,
+    const Component = href ? 'a' : 'button';
+
+    const props = {
         href,
+        className: classNames('TextButton', styles(attrs.disabled), className),
         ...attrs
     };
 
     if (!href) {
-        opts.type = 'button';
+        props.type = 'button';
     }
 
-    return React.createElement(
-        tag,
-        opts,
-        children
+    return (
+        <Component {...props} />
     );
 };
 
@@ -47,14 +39,8 @@ TextButton.propTypes = {
     children: PropTypes.node,
     /** The url to send the link to, if applicable. If provided, will turn button into an anchor element. */
     href: PropTypes.node,
-    /** If an icon is provided, whether to add the margin to the icon on the left or right side. */
-    iconPosition: PropTypes.oneOf(['left', 'right']),
-    /** Whether the button should display as a block level element. */
-    block: PropTypes.bool,
     /** Whether the button is disabled or not. */
     disabled: PropTypes.bool,
-    /** Whether to show a loading animation inside of the button. */
-    loading: PropTypes.bool,
     /**
      * The handler to execute when the button is clicked.
      *
