@@ -2,33 +2,36 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+const style = {
+    pseudo: 'focus:outline-none active:outline-none disabled:cursor-not-allowed',
+    font: 'font-openSans font-semibold text-2xl text-center',
+    base: 'py-4 px-12 rounded border border-solid whitespace-nowrap pointer inline-block select-none appearance-none relative outline-none transition-all',
+    primary: isDisabled => `bg-brand-blue text-neutrals-white border-brand-blue ${isDisabled ? 'bg-neutrals-dashboard text-white border-neutrals-dashboard' : 'hover:bg-brand-blue-700 hover:border-brand-blue-700'}`,
+    secondary: isDisabled => `bg-neutrals-white text-brand-blue border-neutrals-dashboard ${isDisabled ? 'bg-neutrals-pavement text-neutrals-cement border-neutrals-dashboard' : 'hover:border-brand-blue'}`,
+};
+
 const Button = ({
-    className,
-    children,
     type,
     color,
-    iconPosition,
-    block,
-    disabled,
-    loading,
     onClick,
+    children,
+    disabled,
+    className,
     ...attrs
 }) => {
     const classes = classNames(
-        'Button',
-        {[`Button-${color}`]: color},
-        {'Button-block': block},
-        {'Button-loading': loading},
-        {[`Button-with-icon-${iconPosition}`]: iconPosition},
+        style.base,
+        style.font,
+        style[color](disabled),
         className
     );
 
     return (
         <button
-            className={classes}
             type={type}
-            disabled={disabled}
             onClick={onClick}
+            className={classes}
+            disabled={disabled}
             {...attrs}
         >
             {children}
@@ -44,15 +47,9 @@ Button.propTypes = {
     /** The type of button that is rendered. */
     type: PropTypes.oneOf(['button', 'submit', 'reset']),
     /** The color of the button. */
-    color: PropTypes.oneOf(['primary', 'secondary', 'tertiary']),
-    /** If an icon is provided, whether to add the margin to the icon on the left or right side. */
-    iconPosition: PropTypes.oneOf(['left', 'right']),
-    /** Whether the button should display as a block level element. */
-    block: PropTypes.bool,
+    color: PropTypes.oneOf(['primary', 'secondary']),
     /** Whether the button is disabled or not. */
     disabled: PropTypes.bool,
-    /** Whether to show a loading animation inside of the button. */
-    loading: PropTypes.bool,
     /**
      * The handler to execute when the button is clicked.
      *
