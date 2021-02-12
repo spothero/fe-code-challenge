@@ -1,23 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {updateSelected} from '../spot/spot-actions';
+import {Box} from '@chakra-ui/react';
+
 import SpotList from './spot-list/SpotList';
+import {updateSelected} from '../spot/spot-actions';
 
 const Search = ({
     selectedSpot,
     spots,
     setSpot
 }) => {
+    const spotListWidth = '460px';
+
     return (
-        <div className="Search">
+        <Box
+            w="100vw"
+            h="100vh"
+        >
             <SpotList
                 spots={spots}
-                selectedSpot={selectedSpot}
                 setSpot={setSpot}
+                selectedSpot={selectedSpot}
+                spotListWidth={spotListWidth}
             />
-            <div className="Search-content" />
-        </div>
+            <Box
+                top="0"
+                bottom="0"
+                h="100vh"
+                right="0"
+                position="absolute"
+                bg="neutrals.pavement.DEFAULT"
+                w={`calc(100vw - ${spotListWidth})`}
+            />
+        </Box>
     );
 };
 

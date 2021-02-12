@@ -14,7 +14,7 @@
   },
   "scripts": {
     "db": "json-server --watch back-end/db.json --port 8001 --routes back-end/routes.json",
-    "start": "concurrently \"npm run db\" \"react-app-rewired start\"",
+    "start": "concurrently \"npm run db\" \"PORT=3030 react-app-rewired start\"",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
@@ -22,13 +22,13 @@
   "devDependencies": {
     "@jackfranklin/test-data-bot": "1.3.0",
     "@spothero/eslint-config": "1.9.0",
-    "@spothero/stylelint-config": "1.4.0",
     "concurrently": "5.3.0",
-    "json-server": "0.16.3",
-    "stylelint": "13.2.0",
-    "stylelint-webpack-plugin": "1.2.3"
+    "json-server": "0.16.3"
   },
   "dependencies": {
+    "@chakra-ui/react": "1.3.2",
+    "@emotion/react": "11.1.5",
+    "@emotion/styled": "11.1.5",
     "@testing-library/jest-dom": "5.11.6",
     "@testing-library/react": "11.2.2",
     "@testing-library/user-event": "12.5.0",
@@ -37,8 +37,8 @@
     "connected-react-router": "6.4.0",
     "core-js": "3.0.1",
     "form-serialize": "0.7.2",
+    "framer-motion": "3.3.0",
     "history": "4.9.0",
-    "node-sass": "4.13.1",
     "prop-types": "15.7.2",
     "react": "17.0.1",
     "react-app-rewired": "2.1.7",
