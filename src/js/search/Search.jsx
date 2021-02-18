@@ -1,22 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {updateSelected} from '../spot/spot-actions';
-import SpotList from './spot-list/SpotList';
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { updateSelected } from "../spot/spot-actions";
+import SpotList from "./spot-list/SpotList";
 
-const Search = ({
-    selectedSpot,
-    spots,
-    setSpot
-}) => {
+const Search = ({ selectedSpot, spots, setSpot }) => {
     return (
-        <div className="Search">
+        <div className="columns is-gapless">
             <SpotList
                 spots={spots}
                 selectedSpot={selectedSpot}
                 setSpot={setSpot}
             />
-            <div className="Search-content" />
+            <div className="Search-content column" />
         </div>
     );
 };
@@ -27,20 +23,18 @@ Search.propTypes = {
     setSpot: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     const {
-        spot: {
-            selected: selectedSpot
-        }
+        spot: { selected: selectedSpot },
     } = state;
 
     return {
-        selectedSpot
+        selectedSpot,
     };
 };
 
 const mapDispatchToProps = {
-    setSpot: updateSelected
+    setSpot: updateSelected,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

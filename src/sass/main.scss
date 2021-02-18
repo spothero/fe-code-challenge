@@ -1,53 +1,25 @@
-/* ----------------------------------------------------------------------------- *\
-   Vendor Mixins
-\* ----------------------------------------------------------------------------- */
+@import "./utils/vendor/normalize";
+@import "./utils/resets";
+@import "../../node_modules/bulma/bulma.sass";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
 
-@import "utils/vendor/breakpoint";
+html,
+body {
+    font-family: "Open Sans", sans-serif;
+}
 
-/* ----------------------------------------------------------------------------- *\
-   Defaults
-\* ----------------------------------------------------------------------------- */
+/*
+.SpotList-spots {
+    overflow-y: scroll;
+    max-height: 70vh;
+}
 
-@import "utils/defaults";
+.SpotList-heading {
+    height: 100%;
+    max-height: 30vh;
+}
 
-/* ----------------------------------------------------------------------------- *\
-   SpotHero Mixins
-\* ----------------------------------------------------------------------------- */
-
-@import "utils/mixins/center";
-@import "utils/mixins/ellipsis";
-@import "utils/mixins/font-family";
-@import "utils/mixins/font-size";
-
-/* ----------------------------------------------------------------------------- *\
-   Placeholders
-\* ----------------------------------------------------------------------------- */
-
-@import "utils/placeholders/clearfix";
-@import "utils/placeholders/control-sizing";
-@import "utils/placeholders/image-replacement";
-
-/* ----------------------------------------------------------------------------- *\
-   Resets
-\* ----------------------------------------------------------------------------- */
-
-@import "utils/vendor/normalize";
-@import "utils/resets";
-
-/* ----------------------------------------------------------------------------- *\
-   Common
-\* ----------------------------------------------------------------------------- */
-
-@import "common/layout";
-@import "common/typography";
-@import "common/Button";
-@import "common/TextButton";
-
-/* ----------------------------------------------------------------------------- *\
-   Project
-\* ----------------------------------------------------------------------------- */
-
-@import "spot/SpotItem";
-@import "search/Search";
-@import "checkout/Checkout";
-@import "confirmation/Confirmation";
+.Search-Content {
+    max-height: 100vh;
+}
+*/
