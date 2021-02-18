@@ -29,6 +29,7 @@
     "stylelint-webpack-plugin": "1.2.3"
   },
   "dependencies": {
+    "@material-ui/core": "4.11.3",
     "@testing-library/jest-dom": "5.11.6",
     "@testing-library/react": "11.2.2",
     "@testing-library/user-event": "12.5.0",
@@ -55,5 +56,62 @@
   },
   "browserslist": [
     "defaults"
-  ]
+  ],
+  "stylelint": {
+    "extends": [
+      "@spothero/stylelint-config",
+      "stylelint-prettier/recommended"
+    ],
+    "ignoreFiles": [
+      "src/sass/mobile.desktop.module.scss",
+      "src/sass/vendor/_react-big-calendar.scss"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "@spothero",
+      "plugin:prettier/recommended",
+      "prettier/babel",
+      "prettier/react"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.js"
+        ],
+        "rules": {
+          "func-names": 0
+        }
+      },
+      {
+        "files": [
+          "**/*.{js,jsx}"
+        ],
+        "rules": {
+          "no-console": "off"
+        }
+      }
+    ]
+  },
+  "prettier": {
+    "bracketSpacing": false,
+    "endOfLine": "lf",
+    "singleQuote": true,
+    "tabWidth": 4,
+    "trailingComma": "es5",
+    "overrides": [
+      {
+        "files": "*.json",
+        "options": {
+          "tabWidth": 2
+        }
+      },
+      {
+        "files": "*.scss",
+        "options": {
+          "singleQuote": false
+        }
+      }
+    ]
+  }
 }

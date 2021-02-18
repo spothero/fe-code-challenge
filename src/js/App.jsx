@@ -9,7 +9,6 @@ import {
 import Checkout from './checkout/Checkout';
 import Confirmation from './confirmation/Confirmation';
 import Search from './search/Search';
-import '../sass/main.scss';
 
 const App = ({
     spots
