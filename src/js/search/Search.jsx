@@ -13,8 +13,9 @@ const Search = ({
         <div className="Search">
             <SpotList
                 spots={spots}
-                selectedSpot={selectedSpot}
                 setSpot={setSpot}
+                spotListWidth="1000px"
+                selectedSpot={selectedSpot}
             />
             <div className="Search-content" />
         </div>

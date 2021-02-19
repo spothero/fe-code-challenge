@@ -25,6 +25,7 @@
     "@spothero/stylelint-config": "1.4.0",
     "concurrently": "5.3.0",
     "json-server": "0.16.3",
+    "prettier": "2.2.1",
     "stylelint": "13.2.0",
     "stylelint-webpack-plugin": "1.2.3"
   },
