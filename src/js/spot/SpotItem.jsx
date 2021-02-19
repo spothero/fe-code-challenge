@@ -24,28 +24,37 @@ export default class SpotItem extends PureComponent {
             isSelected,
             data: { image, distance, title },
         } = this.props;
-        const classes = classNames("panel-block media mt-0 py-4", {
-            "is-active": isSelected,
-        });
+        const classes = classNames(
+            "panel-block mx-0 my-0 px-0 py-4 tile is-ancestor",
+            {
+                "is-active has-spotlist-selector": isSelected,
+            }
+        );
 
         return (
             <a className={classes}>
-                <div className="media-left">
-                    <figure className="image">
-                        <img className="is-4by3" src={image} />
-                    </figure>
-                </div>
-                <div className="block">
-                    <p className="title is-6">{title}</p>
-                    <p className="subtitle is-6 mb-1">{distance}</p>
-                    {showDetails && (
-                        <a
-                            className="is-ghost p-0"
-                            onClick={this._onDetailsClick}
-                        >
-                            Details
-                        </a>
-                    )}
+                <div className="tile is-horizontal is-12 px-5">
+                    <div className="tile is-child is-4">
+                        <figure className="image">
+                            <img
+                                className="has-radius has-border-light-hover"
+                                src={image}
+                            />
+                        </figure>
+                    </div>
+                    <div className="tile is-child is-vertical content is-7 pl-4">
+                        <div>
+                            <p className="is-size-4 has-text-weight-semibold p-0 mb-0">
+                                {title}
+                            </p>
+                            <p className="content is-smaller mb-1">
+                                {distance}
+                            </p>
+                        </div>
+                        {showDetails && (
+                            <a onClick={this._onDetailsClick}>Details</a>
+                        )}
+                    </div>
                 </div>
             </a>
         );

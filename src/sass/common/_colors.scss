@@ -1,0 +1,194 @@
+/* Color Options */
+$color-blue-50: #f6fbfd;
+$color-blue-100: #a4d2fc;
+$color-blue-200: #52a8fb;
+$color-blue-400: #2995fd;
+$color-blue-500: #0082ff;
+$color-blue-600: #097af5;
+$color-blue-700: #1271eb;
+$color-blue-800: #0c5aba;
+$color-blue-900: #002d58;
+
+$color-grey-50: #f6f7f9;
+$color-grey-100: #e7eaef;
+$color-grey-200: #cbd4de;
+$color-grey-300: #c8d1db;
+$color-grey-400: #b8c5d1;
+$color-grey-500: #a9b8c8;
+$color-grey-600: #9aabbe;
+$color-grey-700: #8a9fb4;
+$color-grey-800: #7b92aa;
+$color-grey-900: #5c7996;
+
+$color-green-50: #eaf8f6;
+$color-green-100: #cef7ef;
+$color-green-200: #9cf3da;
+$color-green-300: #5beac0;
+$color-green-400: #19dc99;
+$color-green-500: #1dbd71;
+$color-green-600: #07b055;
+$color-green-700: #0c924a;
+$color-green-800: #008547;
+$color-green-900: #105d38;
+
+$color-yellow-50: #f9f8eb;
+$color-yellow-100: #f9f4c7;
+$color-yellow-200: #f5ec82;
+$color-yellow-300: #fff000;
+$color-yellow-400: #ffbf02;
+$color-yellow-500: #cfa206;
+$color-yellow-600: #b47e04;
+$color-yellow-700: #916007;
+$color-yellow-800: #72490c;
+$color-yellow-900: #5a3a0e;
+
+$color-red-50: #fdf9f8;
+$color-red-100: #fdeef3;
+$color-red-200: #fbcee6;
+$color-red-300: #fba4d1;
+$color-red-400: #fc6bad;
+$color-red-500: #fc4086;
+$color-red-600: #f7265f;
+$color-red-700: #e01438;
+$color-red-800: #b4193c;
+$color-red-900: #901530;
+
+/* Brand Colors */
+$color-ui-primary: $color-blue-700;
+$color-primary: $color-blue-500;
+$color-secondary: $color-blue-900;
+$color-success: $color-green-800;
+$color-warning: $color-yellow-400;
+$color-error: $color-red-700;
+$color-grey-dark: $color-grey-900;
+$color-grey-accent: $color-grey-200;
+$color-grey-background: $color-grey-50;
+$color-black: #212121;
+$color-white: #ffffff;
+
+/* -- Inverts, Lightens, Darkens -- */
+$color-ui-primary-invert: findcolorinvert($color-blue-700);
+$color-ui-primary-light: findlightcolor($color-blue-700);
+$color-ui-primary-dark: finddarkcolor($color-blue-700);
+
+$color-primary-invert: findcolorinvert($color-blue-500);
+$color-primary-light: findlightcolor($color-blue-500);
+$color-primary-dark: finddarkcolor($color-blue-500);
+
+$color-secondary-invert: findcolorinvert($color-blue-900);
+$color-secondary-light: findlightcolor($color-blue-900);
+$color-secondary-dark: finddarkcolor($color-blue-900);
+
+$color-success-invert: findcolorinvert($color-green-800);
+$color-success-light: findlightcolor($color-green-800);
+$color-success-dark: finddarkcolor($color-green-800);
+
+$color-warning-invert: findcolorinvert($color-yellow-400);
+$color-warning-light: findlightcolor($color-yellow-400);
+$color-warning-dark: finddarkcolor($color-yellow-400);
+
+$color-error-invert: findcolorinvert($color-red-700);
+$color-error-light: findlightcolor($color-red-700);
+$color-error-dark: finddarkcolor($color-red-700);
+
+$color-grey-dark-invert: findcolorinvert($color-grey-900);
+$color-grey-dark-light: findlightcolor($color-grey-900);
+$color-grey-dark-dark: finddarkcolor($color-grey-900);
+
+$color-grey-accent-invert: findcolorinvert($color-grey-200);
+$color-grey-accent-light: findlightcolor($color-grey-200);
+$color-grey-accent-dark: finddarkcolor($color-grey-200);
+
+$color-grey-background-invert: findcolorinvert($color-grey-50);
+$color-grey-background-light: findlightcolor($color-grey-50);
+$color-grey-background-dark: finddarkcolor($color-grey-50);
+
+/* -- Social Media Colors -- */
+$color-social-behance: #1769ff;
+$color-social-dribbble: #ea4c89;
+$color-social-facebook: #3b5998;
+$color-social-github: #cccccc;
+$color-social-linkedin: #007bb6;
+$color-social-twitter: #00aced;
+$color-social-yelp: #c41200;
+
+/* -- Text Colors -- */
+$text: $color-secondary;
+$text-invert: findcolorinvert($text);
+$text-light: $color-grey-dark;
+$text-strong: $color-secondary;
+
+/* -- Link Colors -- */
+$link: $color-primary;
+$link-invert: findcolorinvert($color-primary);
+$link-light: $color-blue-200;
+$link-dark: $color-ui-primary;
+$link-visited: $color-blue-800;
+$link-hover: $color-ui-primary;
+
+/* -- Border Colors -- */
+$border: $color-grey-700;
+$border-hover: $color-grey-dark;
+$border-light: $color-grey-100;
+$border-light-hover: $color-grey-accent;
+
+/* -- Color Map -- */
+/* -- Anything that uses the classes like -- */
+/* -- 'is-primary' get colors from this -- */
+$colors: (
+    "white": (
+        $color-white,
+        $color-black,
+    ),
+    "black": (
+        $color-black,
+        $color-white,
+    ),
+    "light": (
+        $color-grey-background,
+        $color-grey-background-invert,
+    ),
+    "dark": (
+        $color-secondary,
+        $color-white,
+    ),
+    "primary": (
+        $color-primary,
+        $color-white,
+        $color-primary-light,
+        $color-primary-dark,
+    ),
+    "link": (
+        $link,
+        $link-invert,
+        $link-light,
+        $link-dark,
+    ),
+    "ui": (
+        $color-ui-primary,
+        $color-white,
+        $color-ui-primary-light,
+        $color-ui-primary-dark,
+    ),
+    "success": (
+        $color-success,
+        $color-success-invert,
+        $color-success-light,
+        $color-success-dark,
+    ),
+    "warning": (
+        $color-warning,
+        $color-warning-invert,
+        $color-warning-light,
+        $color-warning-dark,
+    ),
+    "danger": (
+        $color-error,
+        $color-error-invert,
+        $color-error-light,
+        $color-error-dark,
+    ),
+);
+
+@import "//node_modules/bulma/sass/utilities/derived-variables.sass";
+@import "//node_modules/bulma/sass/utilities/functions.sass";

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { updateSelected } from "../spot/spot-actions";
 import SpotList from "./spot-list/SpotList";
+import SpotDetailsModal from "../modal/SpotDetailsModal";
 
 const Search = ({ selectedSpot, spots, setSpot }) => {
     return (
@@ -12,7 +13,14 @@ const Search = ({ selectedSpot, spots, setSpot }) => {
                 selectedSpot={selectedSpot}
                 setSpot={setSpot}
             />
-            <div className="Search-content column" />
+            <div className="Search-content column has-background-dark">
+                <SpotDetailsModal
+                    spots={spots}
+                    selectedSpot={selectedSpot}
+                    setSpot={setSpot}
+                    className=""
+                />
+            </div>
         </div>
     );
 };

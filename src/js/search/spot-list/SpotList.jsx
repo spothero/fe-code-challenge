@@ -17,22 +17,26 @@ export default class SpotList extends PureComponent {
         const { selectedSpot, spots } = this.props;
 
         return (
-            <div className="SpotList column is-one-third px-3">
-                <div className="panel">
+            <div className="SpotList column is-4">
+                <div>
                     {/* Heading Container */}
-                    <div className="SpotList-heading panel-heading has-background-light py-6">
+                    <div className="SpotList-heading has-background-white has-border-bottom-light p-5">
                         <nav className="breadcrumb has-succeeds-separator my-2">
-                            <ul className="content is-small">
-                                <li className="p-0 m-0 ">
-                                    <a href="#">Chicago</a>
+                            <ul className="content pb-0 m-0">
+                                <li>
+                                    <a href="#" className="px-1">
+                                        Chicago
+                                    </a>
                                 </li>
-                                <li className="is-active p-0 m-0">
-                                    <a href="#">Millennium Park</a>
+                                <li className="p-0 m-0 is-active">
+                                    <a href="#" className="px-1">
+                                        Millennium Park
+                                    </a>
                                 </li>
                             </ul>
                         </nav>
-                        <h1 className="title is-2">Millennium Park</h1>
-                        <p className="subtitle is-6">
+                        <h1 className="title is-1 mt-4">Millennium Park</h1>
+                        <p className="content has-text-weight-normal is-small mb-3">
                             {spots.length} Spots Available
                         </p>
                     </div>

@@ -1,48 +1,111 @@
-.spothero-html {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        margin-top: 0;
-        font-weight: $font-weight-semi-bold;
+@import "./animation";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
 
-        &.heading-sm {
-            @include font-size(1.6);
-        }
+/* -- Overriding Bulma's Base Styles -- */
 
-        &.heading-md {
-            @include font-size(1.8);
-        }
+/* -- Text Sizes -- */
+$size-1: 2rem;
+$size-2: 1.5rem;
+$size-3: 1.25rem;
+$size-4: 1rem;
+$size-5: 1rem;
+$size-6: 1rem;
+$size-7: 1rem;
 
-        &.heading-lg {
-            @include font-size(4.8);
-        }
+/* -- Font Weights -- */
+$weight-normal: 400;
+$weight-semibold: 600;
+$weight-bold: 700;
+
+/* -- Font Family -- */
+$family-sans-serif: "Open Sans", sans-serif;
+
+/* Header Styles */
+$title-color: $color-secondary;
+$subtitle-color: $color-secondary;
+
+.title,
+.subtitle {
+    .is-1,
+    .is-2 {
+        line-height: 1.5rem;
+    }
+    .is-3,
+    .is-4,
+    .is-5,
+    .is-6 {
+        line-height: 1rem;
     }
 
-    p {
-        line-height: 1.5;
-    }
-
-    a {
-        text-decoration: none;
-        outline: none;
-        color: $color-shift;
-        text-align: left;
-        transition: color $animation;
-
-        &:active,
-        &:focus {
-            outline: none;
-        }
-
-        &:hover {
-            color: $color-shift-hover;
+    .is-1 {
+        font-size: calc(#{$size-1} * 1.25);
+        & .is-mobile {
+            font-size: $size-1;
         }
     }
-
-    small {
-        @include font-size($font-size-sm);
+    .is-2 {
+        font-size: calc(#{$size-2} * 1.3333);
+        & .is-mobile {
+            font-size: $size-2;
+        }
+    }
+    .is-3 {
+        font-size: calc(#{$size-3} * 1.2);
+        & .is-mobile {
+            font-size: $size-3;
+        }
+    }
+    .is-4 {
+        font-size: calc(#{$size-4} + 0.5rem);
+        & .is-mobile {
+            font-size: $size-4;
+        }
+    }
+    .is-5 {
+        font-size: $size-5;
+    }
+    .is-6 {
+        font-size: $size-6;
     }
 }
+
+/* Paragraph Styles */
+.content {
+    font-size: $size-7;
+
+    .is-small {
+        font-size: calc(#{$size-7} * 0.75);
+    }
+
+    .is-smaller {
+        font-size: calc(#{$size-7} * 0.875);
+    }
+}
+
+/* -- Link Styles -- */
+a {
+    transition: color $animation;
+}
+
+/* -- Breadcrumb Styles -- */
+.breadcrumb {
+    font-weight: $weight-semibold;
+
+    &li,
+    .is-active {
+        font-weight: $weight-normal;
+    }
+
+    &.has-succeeds-separator {
+        li + li::before {
+            content: "&gt;";
+        }
+    }
+}
+
+@import "../../../node_modules/bulma/sass/utilities/initial-variables.sass";
+@import "../../../node_modules/bulma/sass/utilities/derived-variables.sass";
+@import "../../../node_modules/bulma/sass/base/generic.sass";
+@import "../../../node_modules/bulma/sass/elements/title.sass";
+@import "../../../node_modules/bulma/sass/elements/content.sass";
+@import "../../../node_modules/bulma/sass/components/breadcrumb.sass";

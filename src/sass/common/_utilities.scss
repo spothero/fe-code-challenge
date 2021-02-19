@@ -1,0 +1,92 @@
+@import "//node_modules/bulma/sass/utilities/initial-variables.sass";
+@import "./animation";
+
+.has-radius {
+    border-radius: $radius;
+}
+
+.has-radius-small {
+    border-radius: $radius-small;
+}
+
+.has-radius-large {
+    border-radius: $radius-large;
+}
+
+.has-radius-rounded {
+    border-radius: $radius-rounded;
+}
+
+.has-border {
+    border: 1px solid $border;
+}
+
+.has-border-hover {
+    border: 1px solid $border;
+    transition: color $animation;
+
+    &:hover {
+        border-color: $border-hover;
+    }
+}
+
+.has-border-light {
+    border: 1px solid $border-light;
+}
+
+.has-border-light-hover {
+    border: 1px solid $border-light;
+    transition: color $animation;
+
+    &:hover {
+        border-color: $border-light-hover;
+    }
+}
+
+.has-border-top {
+    border-top: 1px solid $border;
+}
+
+.has-border-top-light {
+    border-top: 1px solid $border-light;
+}
+
+.has-border-right {
+    border-right: 1px solid $border;
+}
+
+.has-border-right-light {
+    border-right: 1px solid $border-light;
+}
+
+.has-border-bottom {
+    border-bottom: 1px solid $border;
+}
+
+.has-border-bottom-light {
+    border-bottom: 1px solid $border-light;
+}
+
+.has-border-left {
+    border-left: 1px solid $border;
+}
+
+.has-border-left-light {
+    border-left: 1px solid $border-light;
+}
+
+/* -- Scrolling -- */
+.has-scroll-parent {
+    position: absolute;
+    overflow: auto;
+}
+
+.has-scroll-child {
+    position: relative;
+}
+
+$panel-block-hover-background-color: $color-grey-background;
+$panel-block-active-border-left-color: $color-success;
+$panel-block-active-color: $color-black;
+
+@import "//node_modules/bulma/sass/components/panel.sass";
