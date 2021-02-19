@@ -103,7 +103,7 @@ const mapStateToProps = state => {
     } = state;
 
     return {
-        email: 'tyler.scott.14@gmail.com',
+        email: 'testuser@spothero.com',
         selectedSpot
     };
 };
