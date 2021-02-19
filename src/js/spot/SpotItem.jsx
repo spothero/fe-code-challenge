@@ -1,53 +1,63 @@
-import React, {PureComponent} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import Image from '../common/Image';
-import TextButton from '../common/TextButton';
+import {TextButton} from '../theme/components/Button';
+import {Typography, Box} from '@material-ui/core';
+import {makeStyles} from '@material-ui/core/styles';
 
-export default class SpotItem extends PureComponent {
-    static propTypes = {
-        showDetails: PropTypes.bool,
-        isSelected: PropTypes.bool,
-        data: PropTypes.object.isRequired,
-        onDetailsClick: PropTypes.func
-    };
-    static defaultProps = {
-        showDetails: true
-    };
+const useStyles = makeStyles((theme) => ({
+    spotItem: {
+        display: 'flex',
+        alignContent: 'center',
+        justifyContent: 'space-between',
+        padding: '1.25rem 1.563rem',
+        borderBottom: `1px solid ${theme.palette.neutrals.pavement.dark}`,
+    },
+    spotItemInfo: {
+        width: '100%',
+        marginLeft: '1.563rem',
+    },
+    spotItemTitle: {
+        marginBottom: '1rem',
+    },
+    spotItemDetailsButton: {
+        marginTop: '1rem',
+        fontSize: '0.875rem',
+    },
+}));
 
-    _onDetailsClick = evt => {
-        const {
-            data,
-            onDetailsClick
-        } = this.props;
+const SpotItem = ({data, isSelected, onDetailsClick, showDetails = true}) => {
+    const classes = useStyles();
+    const {title, image, distance} = data;
 
-        onDetailsClick(data);
-    }
+    const handleClick = () => onDetailsClick(data);
 
-    render() {
-        const {
-            showDetails,
-            isSelected,
-            data: {
-                image,
-                distance,
-                title
-            }
-        } = this.props;
-        const classes = classNames(
-            'SpotItem',
-            {'SpotItem-selected': isSelected}
-        );
+    return (
+        <Box component="div" className={classes.spotItem}>
+            <Image src={image} />
+            <Box component="div" className={classes.spotItemInfo}>
+                <Typography variant="h2" className={classes.spotItemTitle}>
+                    {title}
+                </Typography>
+                <Typography variant="body2">{distance}</Typography>
+                {showDetails && (
+                    <TextButton
+                        onClick={handleClick}
+                        className={classes.spotItemDetailsButton}
+                    >
+                        Details
+                    </TextButton>
+                )}
+            </Box>
+        </Box>
+    );
+};
 
-        return (
-            <div className={classes}>
-                <Image src={image} />
-                <div className="SpotItem-info">
-                    <h2>{title}</h2>
-                    <p>{distance}</p>
-                    {showDetails && <TextButton onClick={this._onDetailsClick}>Details</TextButton>}
-                </div>
-            </div>
-        );
-    }
-}
+SpotItem.propTypes = {
+    isSelected: PropTypes.bool,
+    showDetails: PropTypes.bool,
+    onDetailsClick: PropTypes.func,
+    data: PropTypes.object.isRequired,
+};
+
+export default SpotItem;

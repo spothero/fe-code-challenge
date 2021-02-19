@@ -7,32 +7,36 @@ const fontSizes = {
     'text-lg': '1.125rem',
     'text-xl': '1.25rem',
     'text-2xl': '1.5rem',
-    'text-3xl': '1.875rem'
+    'text-3xl': '1.875rem',
 };
 
 const fontWeight = {
     base: '400',
     semibold: '600',
-    bold: '900'
+    bold: '900',
 };
 
 const headers = {
     h1: {
         fontSize: fontSizes['text-3xl'],
         fontWeight: fontWeight.semibold,
-    }
+    },
+    h2: {
+        fontSize: fontSizes['text-lg'],
+        fontWeight: fontWeight.semibold,
+    },
 };
 
 const text = {
     body2: {
-        fontSize: fontSizes['text-sm']
-    }
+        fontSize: fontSizes['text-sm'],
+    },
 };
 
 const typography = {
     fontFamily,
     ...headers,
-    ...text
+    ...text,
 };
 
 export default typography;

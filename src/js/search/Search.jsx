@@ -3,12 +3,22 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {updateSelected} from '../spot/spot-actions';
 import SpotList from './spot-list/SpotList';
+import {makeStyles} from '@material-ui/core/styles';
 
-const Search = ({
-    selectedSpot,
-    spots,
-    setSpot
-}) => {
+const useStyles = makeStyles((theme) => ({
+    searchContent: {
+        position: 'absolute',
+        top: 0,
+        left: '28.75rem',
+        width: 'calc(100vw - 28.75rem)',
+        height: '100vh',
+        backgroundColor: `${theme.palette.brand.darkBlue.DEFAULT}`,
+    },
+}));
+
+const Search = ({selectedSpot, spots, setSpot}) => {
+    const classes = useStyles();
+
     return (
         <div className="Search">
             <SpotList
@@ -17,7 +27,7 @@ const Search = ({
                 spotListWidth="1000px"
                 selectedSpot={selectedSpot}
             />
-            <div className="Search-content" />
+            <div className={classes.searchContent} />
         </div>
     );
 };
@@ -28,20 +38,18 @@ Search.propTypes = {
     setSpot: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     const {
-        spot: {
-            selected: selectedSpot
-        }
+        spot: {selected: selectedSpot},
     } = state;
 
     return {
-        selectedSpot
+        selectedSpot,
     };
 };
 
 const mapDispatchToProps = {
-    setSpot: updateSelected
+    setSpot: updateSelected,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
