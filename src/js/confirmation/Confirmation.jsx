@@ -1,78 +1,109 @@
-import React, {PureComponent} from 'react';
+/* eslint-disable indent */
+import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {push} from 'connected-react-router';
-import Button from '../common/Button';
+import {Button} from '../theme/components/Button';
 import Image from '../common/Image';
 
-class Confirmation extends PureComponent {
-    static propTypes = {
-        email: PropTypes.string.isRequired,
-        selectedSpot: PropTypes.object,
-        pushTo: PropTypes.func.isRequired
-    };
+import {Typography, Link, Box} from '@material-ui/core';
+import {makeStyles} from '@material-ui/core/styles';
 
-    constructor(props) {
-        super(props);
+const useStyles = makeStyles(theme => ({
+    confirmation: {
+        width: '30%',
+        margin: '2.5rem auto',
+        padding: '1.5rem',
+        border: `1px solid ${theme.palette.neutrals.dashboard}`,
+        borderRadius: '0.5rem',
+        backgroundColor: theme.palette.neutrals.white,
+        textAlign: 'center'
+    },
+    anchor: theme.typography.anchor,
+    heading: {
+        margin: '0 0 1rem',
+        textAlign: 'center',
+        textTransform: 'uppercase'
+    },
+    text: {
+        ...theme.typography.body2,
+        padding: '0 2.5rem'
+    },
+    image: {
+        margin: '2rem auto'
+    },
+    button: {
+        margin: '2rem auto 0'
+    }
+}));
 
-        const {
-            selectedSpot,
-            pushTo
-        } = props;
+const Confirmation = ({
+    email,
+    pushTo,
+    selectedSpot,
+}) => {
+    const classes = useStyles();
+    const handlePurchaseAnother = evt => pushTo('/');
 
-        // if you refresh on confirmation and there isn't a selectedSpot, make sure to go back to search and render nothing here
+    useEffect(() => {
         if (!selectedSpot) {
             pushTo('/');
         }
+    });
+
+    if (!selectedSpot) {
+        return null;
     }
 
-    _onPurchaseAnotherClick = evt => {
-        const {
-            pushTo,
-        } = this.props;
-
-        pushTo('/');
-    }
-
-    render() {
-        const {
-            email,
-            selectedSpot
-        } = this.props;
-
-        if (!selectedSpot) {
-            return null;
-        }
-
-        return (
-            <div className="Confirmation">
-                <h1>Park it like its hot!</h1>
-                <p>You successfully purchased parking at <strong>{selectedSpot.title}</strong> for <strong>${(selectedSpot.price / 100).toFixed(2)}</strong>.</p>
-                <Image src={selectedSpot.image} />
-                <p>We emailed a receipt to <a href={`mailto:${email}`}>{email}</a>.</p>
-                <Button
-                    color="primary"
-                    onClick={this._onPurchaseAnotherClick}
+    return (
+        <Box className={classes.confirmation}>
+            <Typography
+                variant="h1"
+                className={classes.heading}
+            >
+                Park it like its hot!
+            </Typography>
+            <Typography className={classes.text}>
+                You successfully purchased parking at <strong>{selectedSpot.title}</strong> for <strong>${(selectedSpot.price / 100).toFixed(2)}</strong>.
+            </Typography>
+            <Image
+                src={selectedSpot.image}
+                className={classes.image}
+            />
+            <Typography className={classes.text}>We emailed a receipt to{' '}
+                <Link
+                    className={classes.anchor}
+                    href={`mailto:${email}`}
                 >
-                    Purchase Another Spot!
-                </Button>
-            </div>
-        );
-    }
-}
+                    {email}
+                </Link>.
+            </Typography>
+            <Button
+                color="primary"
+                className={classes.button}
+                onClick={handlePurchaseAnother}
+            >
+                Purchase Another Spot!
+            </Button>
+        </Box>
+    );
+};
+
+Confirmation.propTypes = {
+    selectedSpot: PropTypes.object,
+    pushTo: PropTypes.func.isRequired,
+    email: PropTypes.string.isRequired,
+};
 
 const mapStateToProps = state => {
     const {
-        checkout: {
-            email
-        },
         spot: {
             selected: selectedSpot
         }
     } = state;
 
     return {
-        email,
+        email: 'testuser@spothero.com',
         selectedSpot
     };
 };

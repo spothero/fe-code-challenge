@@ -9,7 +9,8 @@ const styles = {
         MuiCssBaseline: {
             '@global': {
                 body: {
-                    color: colors.brand.darkBlue[900]
+                    color: colors.brand.darkBlue[900],
+                    backgroundColor: colors.neutrals.pavement.DEFAULT
                 }
             }
         }

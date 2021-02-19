@@ -25,17 +25,23 @@ const BaseButton = withStyles({
     root: baseStyle
 })(MUButton);
 
-export const Button = withStyles(theme => ({
-    root: {
-        color: theme.palette.neutrals.white,
-        background: theme.palette.brand.blue.DEFAULT,
-        border: `1px solid ${theme.palette.brand.blue.DEFAULT}`,
-        '&:hover': {
-            background: theme.palette.brand.blue['700'],
-            borderColor: theme.palette.brand.blue['700']
+export const Button = withStyles(theme => {
+    console.log(theme);
+
+    return {
+        root: {
+            ...theme.typography.body2,
+            fontWeight: theme.typography.fontWeightSemiBold,
+            color: theme.palette.neutrals.white,
+            background: theme.palette.brand.blue.DEFAULT,
+            border: `1px solid ${theme.palette.brand.blue.DEFAULT}`,
+            '&:hover': {
+                background: theme.palette.brand.blue['600'],
+                borderColor: theme.palette.brand.blue['600']
+            }
         }
-    }
-}))(BaseButton);
+    };
+})(BaseButton);
 
 export const TextButton = withStyles(theme => ({
     root: {
