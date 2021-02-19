@@ -13,12 +13,11 @@ const Search = ({ selectedSpot, spots, setSpot }) => {
                 selectedSpot={selectedSpot}
                 setSpot={setSpot}
             />
-            <div className="Search-content column has-background-dark">
+            <div className="SearchContent has-background-dark is-absolute">
                 <SpotDetailsModal
                     spots={spots}
                     selectedSpot={selectedSpot}
                     setSpot={setSpot}
-                    className=""
                 />
             </div>
         </div>

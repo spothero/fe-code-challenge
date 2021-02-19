@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import Image from "../common/Image";
 export default class SpotItem extends PureComponent {
     static propTypes = {
         showDetails: PropTypes.bool,
@@ -25,22 +26,17 @@ export default class SpotItem extends PureComponent {
             data: { image, distance, title },
         } = this.props;
         const classes = classNames(
-            "panel-block mx-0 my-0 px-0 py-4 tile is-ancestor",
+            "mx-0 my-0 px-0 py-4 tile is-ancestor has-border-bottom-light",
             {
                 "is-active has-spotlist-selector": isSelected,
             }
         );
 
         return (
-            <a className={classes}>
+            <div className={classes}>
                 <div className="tile is-horizontal is-12 px-5">
                     <div className="tile is-child is-4">
-                        <figure className="image">
-                            <img
-                                className="has-radius has-border-light-hover"
-                                src={image}
-                            />
-                        </figure>
+                        <Image src={image} />
                     </div>
                     <div className="tile is-child is-vertical content is-7 pl-4">
                         <div>
@@ -56,7 +52,7 @@ export default class SpotItem extends PureComponent {
                         )}
                     </div>
                 </div>
-            </a>
+            </div>
         );
     }
 }

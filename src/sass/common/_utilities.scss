@@ -75,18 +75,9 @@
     border-left: 1px solid $border-light;
 }
 
-/* -- Scrolling -- */
-.has-scroll-parent {
+/* -- Positioning -- */
+.is-absolute {
     position: absolute;
-    overflow: auto;
 }
-
-.has-scroll-child {
-    position: relative;
-}
-
-$panel-block-hover-background-color: $color-grey-background;
-$panel-block-active-border-left-color: $color-success;
-$panel-block-active-color: $color-black;
 
 @import "//node_modules/bulma/sass/components/panel.sass";

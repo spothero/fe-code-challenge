@@ -17,9 +17,8 @@ export default class SpotList extends PureComponent {
         const { selectedSpot, spots } = this.props;
 
         return (
-            <div className="SpotList column is-4">
-                <div>
-                    {/* Heading Container */}
+            <div className="SpotListAncestor tile is-ancestor is-absolute p-0 m-0">
+                <div className="SpotListParent tile is-parent is-vertical p-0">
                     <div className="SpotList-heading has-background-white has-border-bottom-light p-5">
                         <nav className="breadcrumb has-succeeds-separator my-2">
                             <ul className="content pb-0 m-0">
@@ -40,10 +39,7 @@ export default class SpotList extends PureComponent {
                             {spots.length} Spots Available
                         </p>
                     </div>
-                    {/* Heading Container */}
-
-                    {/* Spotlist Container */}
-                    <div className="SpotList-spots block">
+                    <div className="SpotListSpots block">
                         {spots.map((spot) => {
                             return (
                                 <SpotItem
@@ -58,7 +54,6 @@ export default class SpotList extends PureComponent {
                             );
                         })}
                     </div>
-                    {/* Spotlist Container */}
                 </div>
             </div>
         );

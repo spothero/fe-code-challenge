@@ -1,28 +1,12 @@
-.SpotList {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: $spot-list-width;
+.SpotListAncestor {
+    width: 28.75rem;
     height: 100vh;
-    background-color: $color-white;
-    border-right: 1px solid $color-dashboard;
+    border-right: 1px solid $color-grey-accent;
     overflow: hidden;
 }
 
-.SpotList-feature {
+.SpotListSpots {
     width: 100%;
-    height: 180px;
-    padding: 35px;
-    border-bottom: 1px solid $color-dashboard;
-}
-
-.SpotList-breadcrumbs {
-    @include font-size(1.6);
-    margin-bottom: 20px;
-}
-
-.SpotList-spots {
-    width: 100%;
-    height: calc(100% - 180px);
+    height: calc(100% - 11.25rem);
     overflow-y: auto;
 }

@@ -1,15 +1,8 @@
-$spot-list-width: 460px;
-
 @import "spot-list/SpotList";
 
-.Search {
-    width: 100%;
-}
-
-.Search-content {
-    position: absolute;
+.SearchContent {
     top: 0;
-    left: $spot-list-width;
-    width: calc(100vw - #{$spot-list-width});
+    left: 28.75rem;
+    width: calc(100vw - 28.75rem);
     height: 100vh;
 }
