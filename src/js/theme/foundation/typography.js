@@ -1,3 +1,5 @@
+import colors from './colors';
+
 const fontFamily = 'Open Sans, sans-serif';
 
 const fontSizes = {
@@ -10,29 +12,36 @@ const fontSizes = {
     'text-3xl': '1.875rem'
 };
 
-const fontWeight = {
-    base: '400',
-    semibold: '600',
-    bold: '900'
-};
+const fontWeightSemiBold = 600;
+const fontWeightBold = 900;
 
 const headers = {
     h1: {
         fontSize: fontSizes['text-3xl'],
-        fontWeight: fontWeight.semibold,
+        fontWeight: fontWeightSemiBold,
     }
 };
 
 const text = {
     body2: {
         fontSize: fontSizes['text-sm']
+    },
+    anchor: {
+        fontFamily,
+        color: colors.brand.blue.DEFAULT,
+        textDecoration: 'none',
+        '&:hover': {
+            color: colors.brand.blue[700]
+        }
     }
 };
 
 const typography = {
     fontFamily,
     ...headers,
-    ...text
+    ...text,
+    fontWeightSemiBold,
+    fontWeightBold
 };
 
 export default typography;
