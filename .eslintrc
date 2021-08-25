@@ -1,12 +1,12 @@
 {
   "overrides": [
     {
-        "files": [
-            "**/*.spec.js"
-        ],
-        "rules": {
-            "max-nested-callbacks": 0
-        }
+      "files": [
+        "**/*.spec.js"
+      ],
+      "rules": {
+        "max-nested-callbacks": 0
+      }
     }
   ],
   "settings": {
@@ -17,7 +17,6 @@
       "tryExtensions": [".js", ".jsx", ".json", ".node"]
     }
   },
-
   "ignorePatterns": [],
   "env": {
     "browser": true,
