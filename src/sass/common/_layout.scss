@@ -9,8 +9,8 @@ html {
 
 .spothero-html {
     body {
-        @include font-family();
-        @include font-size();
+        @include font-family;
+        @include font-size;
         font-weight: $font-weight-normal;
         background-color: $color-pavement;
         color: $color-fuel;
@@ -29,6 +29,6 @@ html {
     height: 100vh;
 
     .Loader {
-        @include center();
+        @include center;
     }
 }
