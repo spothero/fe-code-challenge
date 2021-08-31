@@ -47,7 +47,6 @@
     "core-js": "3.0.1",
     "form-serialize": "0.7.2",
     "history": "4.9.0",
-    "node-sass": "4.13.1",
     "prop-types": "15.7.2",
     "react": "17.0.1",
     "react-app-rewired": "2.1.7",
@@ -60,6 +59,7 @@
     "redux-promise-middleware": "6.1.2",
     "redux-thunk": "2.3.0",
     "regenerator-runtime": "0.13.7",
+    "sass": "1.38.2",
     "transitionEnd": "1.0.2"
   },
   "browserslist": [
