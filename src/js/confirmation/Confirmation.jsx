@@ -32,7 +32,7 @@ class Confirmation extends PureComponent {
         } = this.props;
 
         pushTo('/');
-    }
+    };
 
     render() {
         const {
