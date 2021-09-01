@@ -12,7 +12,7 @@ export default class SpotList extends PureComponent {
 
     _onDetailsClick = spot => {
         this.props.setSpot(spot);
-    }
+    };
 
     render() {
         const {
