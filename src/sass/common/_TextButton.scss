@@ -9,7 +9,7 @@
 }
 
 .TextButton {
-    @include font-family();
+    @include font-family;
     display: inline-block;
     cursor: pointer;
     white-space: nowrap;

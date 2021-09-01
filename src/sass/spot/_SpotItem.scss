@@ -1,7 +1,9 @@
+@use "sass:color";
+
 .SpotItem {
     display: flex;
     padding: 20px 25px;
-    border-bottom: 1px solid darken($color-pavement, 5%);
+    border-bottom: 1px solid color.scale($color-pavement, $lightness: -5%);
 
     .Image {
         flex-shrink: 0;
@@ -14,7 +16,7 @@
 
 .SpotItem-selected {
     position: relative;
-    background-color: darken($color-pavement, 1%);
+    background-color: color.scale($color-pavement, $lightness: -1%);
 
     &::before {
         content: "";

@@ -10,7 +10,7 @@
 
 .Button {
     @extend %control-size;
-    @include font-family();
+    @include font-family;
     padding: 10px 30px;
     text-align: center;
     font-weight: $font-weight-semi-bold;

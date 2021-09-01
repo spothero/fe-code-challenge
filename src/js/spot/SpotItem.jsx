@@ -22,7 +22,7 @@ export default class SpotItem extends PureComponent {
         } = this.props;
 
         onDetailsClick(data);
-    }
+    };
 
     render() {
         const {
