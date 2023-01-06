@@ -2,18 +2,13 @@
 import {hot} from 'react-hot-loader/root';
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-    Route,
-    Switch
-} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import Checkout from './checkout/Checkout';
 import Confirmation from './confirmation/Confirmation';
 import Search from './search/Search';
 import '../sass/main.scss';
 
-const App = ({
-    spots
-}) => {
+const App = ({spots}) => {
     return (
         <Switch>
             <Route
@@ -23,20 +18,19 @@ const App = ({
                     return <Search spots={spots} />;
                 }}
             />
+            <Route path="/checkout" component={Checkout} exact />
+            <Route path="/confirmation" component={Confirmation} exact />
             <Route
-                path="/checkout"
-                component={Checkout}
-            />
-            <Route
-                path="/confirmation"
+                path="/confirmation/:reservationId"
                 component={Confirmation}
+                exact
             />
         </Switch>
     );
 };
 
 App.propTypes = {
-    spots: PropTypes.arrayOf(PropTypes.object).isRequired
+    spots: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default hot(App);

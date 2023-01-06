@@ -1,0 +1,65 @@
+@keyframes scale-up {
+    0% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.Modal {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 350px;
+    z-index: 99;
+    opacity: 0;
+    overflow: auto;
+    transition: opacity 500ms ease-out;
+}
+
+.Modal--show {
+    display: flex;
+    opacity: 1;
+
+    .Modal__dialog {
+        animation: scale-up 0.3s ease forwards;
+    }
+}
+
+.Modal__header {
+    text-align: center;
+    color: $color-fuel;
+}
+
+.Modal__content {
+    overflow: auto;
+}
+
+.Modal__dialog {
+    border-radius: 4px;
+    padding: 24px 50px;
+    background: $color-white;
+    z-index: 100;
+    width: 550px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+
+    .close-icon {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        color: $color-fuel;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

@@ -1,6 +1,7 @@
 $spot-list-width: 460px;
 
 @import "spot-list/SpotList";
+@import "DetailsModal";
 
 .Search {
     width: 100%;
@@ -12,4 +13,5 @@ $spot-list-width: 460px;
     left: $spot-list-width;
     width: calc(100vw - #{$spot-list-width});
     height: 100vh;
+    background: #1c426c;
 }
