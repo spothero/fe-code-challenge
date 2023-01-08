@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import {connect} from 'react-redux';
-
 import {updateSelected} from '../spot/spot-actions';
+import Image from '../common/Image';
+import Button from '../common/Button';
 
 const Checkout = ({selectedSpot, history}) => {
     const [formData, setFormData] = useState({
@@ -43,46 +44,67 @@ const Checkout = ({selectedSpot, history}) => {
 
     return (
         <div className="Checkout">
-            <div className="Checkout-header">
-                <Link to="/">{'<'}Back to Search</Link>
+            <div className="Checkout-container">
+                <div className="Checkout-header">
+                    <Link to="/">{'<'}Back to Search</Link>
+                </div>
+                <div className="Checkout-details">
+                    <Image src={selectedSpot.image} />
+                    <div className="SpotItem-info">
+                        <h2>{selectedSpot.title}</h2>
+                        <p>{selectedSpot.distance}</p>
+                    </div>
+                </div>
+                <div className="Checkout-form">
+                    <form onSubmit={handleCreateReservation}>
+                        <div className="form-control">
+                            <label>
+                                <p>First Name</p>
+                            </label>
+                            <input
+                                value={firstName}
+                                onChange={handleInputChange}
+                                name="firstName"
+                            />
+                        </div>
+                        <div className="form-control">
+                            <label>
+                                <p>Last Name</p>
+                            </label>
+                            <input
+                                value={lastName}
+                                onChange={handleInputChange}
+                                name="lastName"
+                            />
+                        </div>
+                        <div className="form-control">
+                            <label>Email</label>
+                            <input
+                                value={email}
+                                type="email"
+                                onChange={handleInputChange}
+                                name="email"
+                                required
+                            />
+                        </div>
+                        <div className="form-control">
+                            <label>Phone Number</label>
+                            <input
+                                value={phone}
+                                onChange={handleInputChange}
+                                name="phone"
+                                required
+                            />
+                        </div>
+                        <div className="Checkout-submit-button">
+                            <Button color="quaternary" type="submit">
+                                Purchase for $
+                                {(selectedSpot.price / 100).toFixed(2)}
+                            </Button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <form onSubmit={handleCreateReservation}>
-                <div>
-                    <label>First Name</label>
-                    <input
-                        value={firstName}
-                        onChange={handleInputChange}
-                        name="firstName"
-                    />
-                </div>
-                <div>
-                    <label>Last Name</label>
-                    <input
-                        value={lastName}
-                        onChange={handleInputChange}
-                        name="lastName"
-                    />
-                </div>
-                <div>
-                    <label>Email</label>
-                    <input
-                        value={email}
-                        onChange={handleInputChange}
-                        name="email"
-                    />
-                </div>
-                <div>
-                    <label>Phone Number</label>
-                    <input
-                        value={phone}
-                        onChange={handleInputChange}
-                        name="phone"
-                    />
-                </div>
-                <div>
-                    <button type="submit">Book</button>
-                </div>
-            </form>
         </div>
     );
 };

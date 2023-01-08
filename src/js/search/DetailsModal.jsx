@@ -25,9 +25,8 @@ const DetailsModal = ({isOpen, title, price, onClose, description}) => {
                         type="button"
                         color="primary"
                         onClick={() => history.push(`/checkout`)}
-                        data-testid="book-spot-btn"
                     >
-                        ${price / 100} | Book it!
+                        ${(price / 100).toFixed(2)} | Book it!
                     </Button>
                 </div>
             </ModalContent>

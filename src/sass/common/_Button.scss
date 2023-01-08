@@ -128,6 +128,24 @@
     }
 }
 
+.Button-quaternary {
+    background-color: $color-accelerate;
+    color: $color-dashboard;
+    border: 1px solid $color-dashboard;
+
+    &:not([disabled]) {
+        &:hover {
+            border-color: $color-shift;
+        }
+    }
+
+    &:disabled {
+        background-color: $color-pavement;
+        color: $color-cement;
+        border: 1px solid $color-dashboard;
+    }
+}
+
 .Button-loading {
     position: relative;
     pointer-events: none;
