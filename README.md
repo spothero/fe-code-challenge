@@ -61,7 +61,7 @@ Available routes include:
 
 ## Notes
 
-* Even though you should not perform any actual changes to the code in advance, it's encouraged to thoroughly review the existing implementation in order to prepare to address the [key focus areas](#key-focus-areas) we'll be covering during the actual live interview.  
+* Even though you're not required to perform any actual changes to the code in advance, it's encouraged to thoroughly review the existing implementation in order to prepare to address the [key focus areas](#key-focus-areas) we'll be covering during the actual live interview.  
 * Feel free to take notes in advance on what you'd like to cover during the interview.  Meaningful discussions and questions are encouraged! 
 * If you are unfamiliar with [json-server](https://www.npmjs.com/package/json-server#filter), it may be worth the time to familiarize yourself with it
 * Would anything here make sense to test?
