@@ -1,5 +1,5 @@
 # SpotHero FE Coding Challenge V2
-This exercise will consist of a planning and technical refinement session for a mock refactor of the application contained in this repository.  This will occur during the live interview & candidates **_are not_** expected to complete any of the refactoring prior.  
+This exercise will consist of a planning and technical refinement session for a mock refactor of the application contained in this repository.  This will occur during the live interview & candidates **_are not_** expected to complete any of the refactoring prior.  Instead they're to be provided access to this codebase in advance of the interview as an opportunity to review the code in preparation for the session.
 
 It's important to note that the candidate is not expected to refactor the entire application nor do we expect the application to even run.  The goal here is to better understand the thought process and what it’s like to work alongside in planning and implementing some larger scale changes in a real working environment.  
 
