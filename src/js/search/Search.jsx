@@ -4,11 +4,7 @@ import {connect} from 'react-redux';
 import {updateSelected} from '../spot/spot-actions';
 import SpotList from './spot-list/SpotList';
 
-const Search = ({
-    selectedSpot,
-    spots,
-    setSpot
-}) => {
+const Search = ({selectedSpot, spots, setSpot}) => {
     return (
         <div className="Search">
             <SpotList
@@ -29,18 +25,16 @@ Search.propTypes = {
 
 const mapStateToProps = state => {
     const {
-        spot: {
-            selected: selectedSpot
-        }
+        spot: {selected: selectedSpot},
     } = state;
 
     return {
-        selectedSpot
+        selectedSpot,
     };
 };
 
 const mapDispatchToProps = {
-    setSpot: updateSelected
+    setSpot: updateSelected,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

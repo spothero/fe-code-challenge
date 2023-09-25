@@ -1,8 +1,4 @@
-import {
-    createStore,
-    applyMiddleware,
-    compose
-} from 'redux';
+import {createStore, applyMiddleware, compose} from 'redux';
 import {createBrowserHistory} from 'history';
 import {routerMiddleware} from 'connected-react-router';
 import thunkMiddleware from 'redux-thunk';
@@ -21,7 +17,7 @@ export default function create(initialState) {
             applyMiddleware(
                 routerMiddleware(history),
                 thunkMiddleware,
-                promiseMiddleware,
+                promiseMiddleware
             )
         )
     );

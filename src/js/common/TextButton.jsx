@@ -20,24 +20,20 @@ const TextButton = ({
         {[`TextButton-with-icon-${iconPosition}`]: iconPosition},
         className
     );
-    const tag = (href) ? 'a' : 'button';
+    const tag = href ? 'a' : 'button';
     const opts = {
         className: classes,
         disabled,
         onClick,
         href,
-        ...attrs
+        ...attrs,
     };
 
     if (!href) {
         opts.type = 'button';
     }
 
-    return React.createElement(
-        tag,
-        opts,
-        children
-    );
+    return React.createElement(tag, opts, children);
 };
 
 TextButton.propTypes = {
@@ -60,7 +56,7 @@ TextButton.propTypes = {
      *
      * @param {SyntheticEvent} evt - The React `SyntheticEvent`.
      */
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
 };
 
 export default TextButton;
