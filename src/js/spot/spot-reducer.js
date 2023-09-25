@@ -1,7 +1,7 @@
 import {SPOT_UPDATE_SELECTED} from './spot-actions';
 
 const initialState = {
-    selected: null
+    selected: null,
 };
 
 export default function spot(state = initialState, {type, payload}) {
@@ -9,7 +9,7 @@ export default function spot(state = initialState, {type, payload}) {
         case SPOT_UPDATE_SELECTED: {
             return {
                 ...state,
-                selected: payload || null
+                selected: payload || null,
             };
         }
 

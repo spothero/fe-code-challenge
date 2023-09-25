@@ -8,7 +8,7 @@ import App from './App';
 export default class Root extends Component {
     state = {
         isLoading: true,
-        spots: []
+        spots: [],
     };
 
     componentDidMount() {
@@ -17,13 +17,11 @@ export default class Root extends Component {
 
     async _loadSpots() {
         try {
-            const {
-                data
-            } = await axios.get('/spots');
+            const {data} = await axios.get('/spots');
 
             this.setState({
                 isLoading: false,
-                spots: data
+                spots: data,
             });
         } catch (error) {
             console.log('Error loading spot data: ', error); // eslint-disable-line no-console
@@ -31,17 +29,10 @@ export default class Root extends Component {
     }
 
     render() {
-        const {
-            isLoading,
-            spots
-        } = this.state;
+        const {isLoading, spots} = this.state;
 
         if (isLoading) {
-            return (
-                <div className="Root-loader">
-                    Loading...
-                </div>
-            );
+            return <div className="Root-loader">Loading...</div>;
         }
 
         return (

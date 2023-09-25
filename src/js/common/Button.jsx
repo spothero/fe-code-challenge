@@ -58,11 +58,11 @@ Button.propTypes = {
      *
      * @param {SyntheticEvent} evt - The React `SyntheticEvent`.
      */
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
 };
 
 Button.defaultProps = {
-    type: 'button'
+    type: 'button',
 };
 
 export default Button;

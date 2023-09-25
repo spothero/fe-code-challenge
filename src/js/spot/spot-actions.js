@@ -4,13 +4,13 @@ export const SPOT_PURCHASE = 'SPOT_PURCHASE';
 export const updateSelected = spot => {
     return {
         type: SPOT_UPDATE_SELECTED,
-        payload: spot
+        payload: spot,
     };
 };
 
 export const purchase = data => {
     return {
         type: SPOT_PURCHASE,
-        payload: data
+        payload: data,
     };
 };
