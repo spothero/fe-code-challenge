@@ -4,7 +4,7 @@ Complete the two stories below to finalize a fictitious SpotHero checkout flow.
 
 ## Prerequisites
 
--   node/npm
+-   node v12 & npm v6
 
 ## Story #1
 
@@ -38,6 +38,7 @@ Add a form that takes user input, verifies it, submits it to the backend, and al
 You may use any additional open source tools you wish to satisfy the requirements.
 
 1. Download or clone this repository.
+1. Run `nvm use` (or if not using nvm an equivalent command to set your node version to 12)
 1. Run `npm install` to download all necessary dependencies.
 1. Run `npm start` to serve the API _(see API notes below)_ and spin up the local development environment.
 1. Implement your solution.
