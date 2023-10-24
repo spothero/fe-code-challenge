@@ -105,7 +105,6 @@
         "id-blacklist": 0,
         "id-length": 0,
         "id-match": 0,
-        "implicit-arrow-linebreak": 2,
         "indent": [
         2,
         4,
@@ -435,12 +434,6 @@
         "react/jsx-indent-props": 2,
         "react/jsx-key": 2,
         "react/jsx-max-depth": 0,
-        "react/jsx-max-props-per-line": [
-        2,
-        {
-            "maximum": 1
-        }
-        ],
         "react/jsx-no-bind": [
         2,
         {
